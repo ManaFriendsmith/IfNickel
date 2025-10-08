@@ -1,0 +1,16 @@
+{
+    "recipe":
+    [
+      ["motorized-articulator", "motorized-arm"],
+      ["flow-controller", "fluid-regulator"],
+      ["motor", "electric-motor"],
+      ["invar-valve", "high-pressure-valve"]
+    ],
+    "item":
+    [
+        ["motorized-articulator", "motorized-arm"],
+        ["flow-controller", "fluid-regulator"],
+        ["motor", "electric-motor"],
+        ["invar-valve", "high-pressure-valve"]
+    ]
+}

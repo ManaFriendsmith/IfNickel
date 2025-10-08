@@ -1,0 +1,10 @@
+{
+  "name": "IfNickel",
+  "version": "2.0.0",
+  "title": "If I Had A Nickel",
+  "author": "planetfall",
+  "homepage": "",
+  "description": "Adds nickel ore and plates, invar alloy, and some mechanical components.",
+  "factorio_version": "2.0",
+  "dependencies": ["base >= 2.0", "pf-functions", "? space-age", "? pf-sa-compat", "~ ZZZ-RecyclerFinalFinal", "? BrassTacks", "? maraxsis"]
+}
