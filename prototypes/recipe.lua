@@ -55,7 +55,6 @@ data:extend({
         },
         energy_required = 6.4,
         allow_productivity = true,
-        auto_recycle = false,
         enabled = false
     },
     {
@@ -91,74 +90,31 @@ data:extend({
 })
 
 if mods["space-age"] then
-    data.raw.item["invar-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
-    data.raw.item["nickel-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
+    --data.raw.item["invar-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
+    --data.raw.item["nickel-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
+
+    data.raw.recipe["invar-plate"].force_auto_recycle = true
 
     data:extend({
         {
             type = "recipe",
-            name = "custom-invar-plate-recycling",
-            localised_name = {"recipe-name.recycling", {"item-name.invar-plate"}},
-            icons = {
-                      {
-                        icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
-                      },
-                      {
-                        icon = "__IfNickel__/graphics/icons/invar-plate.png",
-                        icon_size = 64
-                      },
-                      {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
-                      }
-            },
-            category = "recycling",
+            name = "invar-separation",
+            icon = "__IfNickel__/graphics/icons/invar-separation.png",
+            icon_size = 64,
+            category = "centrifuging",
             ingredients = {
-                {type="item", name="invar-plate", amount=1}
+                {type="item", name="invar-precursor", amount=1}
             },
             results = {
                 {type="item", name="iron-ore", amount=1, probability = 0.12},
                 {type="item", name="nickel-ore", amount=1, probability = 0.12}
             },
-            bespoke = "invar-plate",
-            energy_required = 6.4/16,
+            subgroup = "fulgora-processes",
+            order = "a[trash]-ac",
+            energy_required = 0.25,
             allow_productivity = false,
+            allow_quality = false,
             enabled = true,
-            hidden = true,
-            allow_decomposition = false,
-            unlock_results = false
-        },
-        {
-            type = "recipe",
-            name = "custom-nickel-plate-recycling",
-            localised_name = {"recipe-name.recycling", {"item-name.nickel-plate"}},
-            icons = {
-                      {
-                        icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
-                      },
-                      {
-                        icon = "__IfNickel__/graphics/icons/nickel-plate.png",
-                        icon_size = 64
-                      },
-                      {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
-                      }
-            },
-            category = "recycling",
-            ingredients = {
-                {type="item", name="nickel-plate", amount=1}
-            },
-            results = {
-                {type="item", name="nickel-ore", amount=1, probability = 0.06}
-            },
-            bespoke = "nickel-plate",
-            energy_required = 3.2/16,
-            allow_productivity = false,
-            enabled = true,
-            hidden = true,
             allow_decomposition = false,
             unlock_results = false
         },

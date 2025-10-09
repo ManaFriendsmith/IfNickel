@@ -138,6 +138,9 @@ if data.raw.item["nitinol-plate"] then
 end
 
 --FULGORA
+
+tm.AddUnlock("recycling", "invar-separation")
+
 --many factors affect availability + demand of nickel here. you need invar and motors to make rocket engines to export anything.
 local motor_chance = 0.07
 
