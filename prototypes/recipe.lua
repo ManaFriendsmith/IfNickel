@@ -796,7 +796,7 @@ if mods["space-age"] then
                 {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1}
             },
             results = {
-                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, probability=0.6},
+                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, probability=0.6},
                 {type="item", name="iron-bacteria", amount=1, probability=0.1},
                 {type="item", name="copper-bacteria", amount=1, probability=0.1},
                 {type="item", name="nickel-bacteria", amount=1, probability=0.1},
@@ -833,12 +833,11 @@ if mods["space-age"] then
                 {type="item", name="philosophers-hormone", amount=2}
             },
             results = {
-                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, probability=0.5},
+                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, probability=0.33},
                 {type="item", name="spoilage", amount=1}
             },
-            energy_required = 5,
+            energy_required = 3,
             result_is_always_fresh = true,
-            maximum_productivity = 0,
             allow_productivity = true,
             enabled = false,
             crafting_machine_tint =
