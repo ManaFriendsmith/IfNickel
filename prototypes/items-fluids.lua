@@ -495,6 +495,7 @@ if mods["space-age"] then
       pick_sound = sludge_pickup,
       drop_sound = sludge_drop,
       stack_size = 1,
+      flags = {"not-stackable"},
       default_import_location = "gleba",
       weight = 100*kg,
       canonical_recipe = false, -- no recycling!
@@ -511,6 +512,7 @@ if mods["space-age"] then
       pick_sound = sludge_pickup,
       drop_sound = sludge_drop,
       stack_size = 1,
+      flags = {"not-stackable"},
       default_import_location = "gleba",
       weight = 100*kg,
       canonical_recipe = false, -- no recycling!
