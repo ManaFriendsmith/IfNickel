@@ -26,7 +26,6 @@ There are two ways to control the difficulty: a global setting that's part of pf
 
 - Planetfall - Design, code, original vector graphics
 - [AtelierAmber](https://github.com/AtelierAmber) - If I Had a Nickel Legacy
-- [Galdoc](https://www.youtube.com/@galdocstutorials/videos) - 3D rendered icon graphics (not yet implemented for 2.0), thumbnail
 - [Sigmaleph](https://sigmaleph.tumblr.com/) - Pre-2.0 Spanish localization (2.0 too frequently changing to warrant translating yet)
 
 # LICENSE
