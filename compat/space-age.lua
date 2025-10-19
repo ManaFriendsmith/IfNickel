@@ -200,10 +200,10 @@ end
 
 if misc.difficulty == 3 then
     --pedantry really. i mean nothing else is as on-flavor as needing electromagnets but the main cost of this will be the rocket launches
-    rm.AddIngredient("fusion-reactor", "electromagnetic-coil", 200)
-    --if not data.raw.item["semiboloid-stator"] then
+    if rm.GetIngredientCount("fusion-reactor", "electric-coil") == 0 then
+        rm.AddIngredient("fusion-reactor", "electromagnetic-coil", 200)
         rm.AddIngredient("fusion-generator", "electromagnetic-coil", 100)
-    --end
+    end
 
     tm.AddUnlock("cryogenic-science-pack", "organ-preservation")
     tm.AddPrerequisite("cryogenic-science-pack", "tissue-cultivation")
