@@ -49,7 +49,9 @@ if mods["Paracelsin"] then
         end
     end
 
-    rm.AddIngredient("mechanical-plant", "electric-motor", 20)
+    if not (mods["ThemTharHills"] and misc.difficulty > 1) then
+        rm.AddIngredient("mechanical-plant", "electric-motor", 20)
+    end
 
     table.insert(data.raw["simple-entity"]["big-metallic-rock"].minable.results, {type="item", name="nickel-ore", amount_min=5, amount_max=11})
 
@@ -58,6 +60,10 @@ if mods["Paracelsin"] then
         data.raw.item["electric-coil"].localised_name = {"item-name.tripolar-electromagnet"}
     else
         rm.ReplaceIngredientProportional("electric-coil", "iron-gear-wheel", "nickel-plate", 1)
+    end
+
+    if misc.difficulty == 3 then
+        rm.AddIngredient("paracelsin-processing-units-from-nitric-acid", "cooling-fan", 1)
     end
 
     rm.AddRecipeCategory("high-pressure-valve", "mechanics")
