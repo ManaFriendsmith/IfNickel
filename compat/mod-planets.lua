@@ -58,6 +58,7 @@ if mods["Paracelsin"] then
     if misc.difficulty > 1 then
         rm.ReplaceIngredientProportional("electric-coil", "copper-cable", "electromagnetic-coil", 0.5)
         data.raw.item["electric-coil"].localised_name = {"item-name.tripolar-electromagnet"}
+        data.raw.recipe["electric-coil"].localised_name = {"item-name.tripolar-electromagnet"}
     else
         rm.ReplaceIngredientProportional("electric-coil", "iron-gear-wheel", "nickel-plate", 1)
     end
