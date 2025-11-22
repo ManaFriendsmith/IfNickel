@@ -796,10 +796,10 @@ if mods["space-age"] then
                 {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1}
             },
             results = {
-                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, probability=0.6},
+                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, probability=0.55},
                 {type="item", name="iron-bacteria", amount=1, probability=0.1},
                 {type="item", name="copper-bacteria", amount=1, probability=0.1},
-                {type="item", name="nickel-bacteria", amount=1, probability=0.1},
+                {type="item", name="nickel-bacteria", amount=1, probability=0.05},
             },
             energy_required = 5,
             allow_productivity = true,
@@ -830,10 +830,10 @@ if mods["space-age"] then
             category = "organic",
             ingredients = {
                 {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1},
-                {type="item", name="philosophers-hormone", amount=2}
+                {type="item", name="philosophers-hormone", amount=10}
             },
             results = {
-                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, probability=0.33},
+                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, probability=0.25},
                 {type="item", name="spoilage", amount=1}
             },
             energy_required = 3,
@@ -849,7 +849,7 @@ if mods["space-age"] then
     })
     
     if mods["BrassTacks"] then
-        rm.AddProduct("bacterium-extraction-from-sludge", {type="item", name="zinc-bacteria", amount=1, probability=0.1})
+        rm.AddProduct("bacterium-extraction-from-sludge", {type="item", name="zinc-bacteria", amount=1, probability=0.05})
     end
     rm.AddProduct("musculoskeletal-bioculture", {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, probability=0.05})
     rm.AddProduct("cardiac-bioculture", {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, probability=0.05})
