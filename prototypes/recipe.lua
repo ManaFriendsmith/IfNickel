@@ -192,7 +192,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="invar-plate", amount=1}
             },
-            energy_required = 6.4,
+            energy_required = 3.2,
             allow_productivity = true,
             enabled = false
         },
