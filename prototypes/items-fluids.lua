@@ -460,6 +460,7 @@ if mods["space-age"] then
       spoil_ticks = 20 * 60,
       canonical_recipe = false,
       hidden_in_factoriopedia = true,
+      hidden = true,
       spoil_to_trigger_result =
       {
         items_per_trigger = 1,
