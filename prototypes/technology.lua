@@ -122,11 +122,132 @@ if misc.difficulty > 1 and mods["space-age"] then
                     {"agricultural-science-pack", 1}
                 }
             }
+        },
+        {
+            type = "technology",
+            name = "bioculture-productivity",
+            icons = {
+                {
+                    icon = "__IfNickel__/graphics/technology/tissue-cultivation.png",
+                    icon_size = 256
+                },
+                {
+                    icon = "__core__/graphics/icons/technology/constants/constant-mining-productivity.png",
+                    icon_size = 128,
+                    scale = 0.5,
+                    shift = {50, 50}
+                }
+                },
+            effects =
+            {
+                {
+                type = "change-recipe-productivity",
+                recipe = "skeletal-bioculture",
+                change = 0.1
+                },
+                {
+                type = "change-recipe-productivity",
+                recipe = "musculoskeletal-bioculture",
+                change = 0.1
+                },
+                {
+                type = "change-recipe-productivity",
+                recipe = "vascular-bioculture",
+                change = 0.1
+                },
+                {
+                type = "change-recipe-productivity",
+                recipe = "cardiac-bioculture",
+                change = 0.1
+                }
+            },
+            prerequisites = {"tissue-cultivation", "production-science-pack", "cryogenic-science-pack"},
+            unit =
+            {
+                count_formula = "1.5^L*2000",
+                ingredients =
+                {
+                    {"automation-science-pack", 1},
+                    {"logistic-science-pack", 1},
+                    {"chemical-science-pack", 1},
+                    {"production-science-pack", 1},
+                    {"utility-science-pack", 1},
+                    {"agricultural-science-pack", 1},
+                    {"cryogenic-science-pack", 1}
+                },
+                time = 60
+            },
+            max_level = 5,
+            upgrade = true
+        },
+        {
+            type = "technology",
+            name = "bioculture-productivity-6",
+            icons = {
+                {
+                    icon = "__IfNickel__/graphics/technology/tissue-cultivation.png",
+                    icon_size = 256
+                },
+                {
+                    icon = "__core__/graphics/icons/technology/constants/constant-mining-productivity.png",
+                    icon_size = 128,
+                    scale = 0.5,
+                    shift = {50, 50}
+                }
+                },
+            effects =
+            {
+                {
+                type = "change-recipe-productivity",
+                recipe = "skeletal-bioculture",
+                change = 0.1
+                },
+                {
+                type = "change-recipe-productivity",
+                recipe = "musculoskeletal-bioculture",
+                change = 0.1
+                },
+                {
+                type = "change-recipe-productivity",
+                recipe = "vascular-bioculture",
+                change = 0.1
+                },
+                {
+                type = "change-recipe-productivity",
+                recipe = "cardiac-bioculture",
+                change = 0.1
+                }
+            },
+            prerequisites = {"bioculture-productivity", "promethium-science-pack"},
+            unit =
+            {
+                count_formula = "1.5^L*2000",
+                ingredients =
+                {
+                    {"automation-science-pack", 1},
+                    {"logistic-science-pack", 1},
+                    {"military-science-pack", 1},
+                    {"chemical-science-pack", 1},
+                    {"production-science-pack", 1},
+                    {"utility-science-pack", 1},
+                    {"space-science-pack", 1},
+                    {"metallurgic-science-pack", 1},
+                    {"electromagnetic-science-pack", 1},
+                    {"agricultural-science-pack", 1},
+                    {"cryogenic-science-pack", 1},
+                    {"promethium-science-pack", 1}
+                },
+                time = 60
+            },
+            max_level = "infinite",
+            upgrade = true
         }
     })
 
     if mods["BrassTacks"] then
         tm.AddUnlock("tissue-cultivation", "vestibular-bioculture")
+        tm.AddUnlock("bioculture-productivity", {type="change-recipe-productivity", recipe="vestibular-bioculture", change=0.1})
+        tm.AddUnlock("bioculture-productivity-6", {type="change-recipe-productivity", recipe="vestibular-bioculture", change=0.1})
     end
 
     if misc.difficulty == 3 then
