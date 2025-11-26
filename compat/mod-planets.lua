@@ -25,6 +25,10 @@ if mods["maraxsis"] then
         rm.AddIngredient("maraxsis-hydro-plant", "non-reversible-tremie-pipe", 1)
         rm.AddIngredient("maraxsis-salt-reactor", "non-reversible-tremie-pipe", 10)
     end
+
+    if misc.difficulty > 1 then
+        tm.AddSciencePack("bioculture-productivity-6", "hydraulic-science-pack")
+    end
 end
 
 --cerys: I'm really not sure if you can obtain all ores in decent ratios from recycling stuff.
@@ -74,4 +78,45 @@ if mods["Paracelsin"] then
 
     rm.AddProduct("tetrahedrite-processing", "nickel-ore")
     rm.RemoveProduct("tetrahedrite-processing", "zinc-ore")
+
+    if misc.difficulty > 1 then
+        tm.AddSciencePack("bioculture-productivity-6", "galvanization-science-pack")
+    end
+end
+
+if mods["castra"] then
+    data.raw.planet["castra"].map_gen_settings.autoplace_controls["nickel-ore"] = {}
+    data.raw.planet["castra"].map_gen_settings.autoplace_settings.entity.settings["nickel-ore"] = {}
+
+    data.raw.item["cst-nickel-plate"].localised_name = {"item-name.cobalt-plate"}
+    data.raw.item["millerite"].localised_name = {"item-name.glaucodot"}
+    data.raw.resource["millerite"].localised_name = {"entity-name.glaucodot"}
+    data.raw.unit["data-collector-millerite"].localised_name = {"entity-name.glaucodot"}
+    data.raw["autoplace-control"]["millerite"].localised_name = {"", "[entity=millerite]", {"entity-name.glaucodot"}}
+
+    data.raw.recipe["nickel-extraction"].localised_name = {"recipe-name.cobalt-extraction"}
+    data.raw.recipe["nickel-sulfide-reduction"].localised_name = {"recipe-name.cobalt-sulfide-reduction"}
+    data.raw.recipe["advanced-nickel-processing"].localised_name = {"recipe-name.advanced-cobalt-processing"}
+    data.raw.technology["advanced-nickel-processing"].localised_name = {"recipe-name.advanced-cobalt-processing"}
+    data.raw.recipe["holmium-catalyzing"].localised_name = {"recipe-name.holmium-catalyzing-cobalt"}
+    data.raw.recipe["battery-nickel"].localised_name = {"recipe-name.battery-cobalt"}
+    data.raw.recipe["tank-nickel"].localised_name = {"recipe-name.tank-cobalt"}
+    data.raw.recipe["firearm-magazine-nickel"].localised_name = {"recipe-name.firearm-magazine-cobalt"}
+    data.raw.recipe["piercing-rounds-catalyzing"].localised_name = {"recipe-name.piercing-rounds-glaucodot"}
+
+    if misc.difficulty == 3 then
+        tm.AddUnlock("gunpowder-processing", "ambifacient-lunar-waneshaft-gunpowder", "-engine-unit-gunpowder")
+        tm.RemoveUnlock("gunpowder-processing", "engine-unit-gunpowder")
+        tm.RemoveUnlock("engine-productivity", {type="change-recipe-productivity", recipe="engine-unit-gunpowder"})
+        data.raw.recipe["engine-unit-gunpowder"] = nil
+        rm.AddIngredient("tank-nickel", "ambifacient-lunar-waneshaft", 20)
+        rm.AddIngredient("processing-unit-battlefield-data", "cooling-fan", 4)
+    else
+        rm.ReplaceIngredientProportional("engine-unit-gunpowder", "pipe", "high-pressure-valve", 0.5)
+    end
+    rm.AddIngredient("battery-nickel", "nickel-plate", 1)
+
+    if misc.difficulty > 1 then
+        tm.AddSciencePack("bioculture-productivity-6", "battlefield-science-pack")
+    end
 end

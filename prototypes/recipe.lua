@@ -1030,3 +1030,38 @@ if mods["space-age"] and mods["bztitanium"] then
         }
     })
 end
+
+if mods["space-age"] and mods["castra"] then
+    data:extend({
+        {
+            type = "recipe",
+            name = "ambifacient-lunar-waneshaft-gunpowder",
+            icons = {
+                {
+                    icon = "__IfNickel__/graphics/icons/ambifacient-lunar-waneshaft.png",
+                    icon_size = 64,
+                    scale = 0.7,
+                    shift = {0, -10}
+                },
+                {
+                    icon = "__castra__/graphics/icons/gunpowder.png",
+                    icon_size = 64,
+                    scale = 0.5,
+                    shift = {-10, 10}
+                }
+            },
+            category = "advanced-crafting",
+            ingredients = {
+                {type="item", name="invar-plate", amount=1},
+                {type="item", name=mods["BrassTacks"] and "galvanized-rod" or "iron-stick", amount=4},
+                {type="item", name="gunpowder", amount=5}
+            },
+            results = {
+                {type="item", name="ambifacient-lunar-waneshaft", amount=1}
+            },
+            energy_required = 2,
+            allow_productivity = true,
+            enabled = false
+        },
+    })
+end
