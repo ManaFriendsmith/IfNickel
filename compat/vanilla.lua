@@ -170,8 +170,10 @@ if misc.difficulty > 1 then
         tm.AddSciencePack("inserter-capacity-bonus-1", "chemical-science-pack")
         tm.AddSciencePack("inserter-capacity-bonus-2", "chemical-science-pack")
     else
-        rm.AddIngredient("stack-inserter", "grabber", 1)
-        rm.RemoveIngredient("stack-inserter", "complex-joint", 1)
+        if misc.difficulty == 3 then
+            rm.AddIngredient("stack-inserter", "grabber", 1)
+            rm.RemoveIngredient("stack-inserter", "complex-joint", 1)
+        end
         rm.AddIngredient("bulk-inserter", "motorized-arm", 5)
     end
     if rm.GetIngredientCount("bulk-inserter", "iron-gear-wheel") <= 5 then --can be replaced by titanium
