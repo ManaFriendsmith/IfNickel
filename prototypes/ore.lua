@@ -61,7 +61,7 @@ data:extend({
     type = "autoplace-control",
     category = "resource",
     name = "nickel-ore",
-    localised_name = {"", (mods["LunarLandings"] and "[virtual-signal=ll-nauvis] " or "") .. "[entity=nickel-ore] ", {"entity-name.nickel-ore"}},
+    localised_name = {"", "[entity=nickel-ore] ", {"entity-name.nickel-ore"}},
     richness = true,
     order = "a-ea"
   }
@@ -205,8 +205,8 @@ if mods["space-age"] then
         name = "maraxsis_malachite_probability",
         expression = "min(maraxsis_malachite_noise, 1) + exclusion_area + min(trench_proximity * 20, 0.7)",
         local_expressions = {
-          trench_proximity = "0.15 - (maraxsis_surface_elevation - " .. maraxsis.TRENCH_ENTRANCE_ELEVATION .. ")",
-          exclusion_area = "((maraxsis_surface_elevation - 0.01) < " .. maraxsis.TRENCH_ENTRANCE_ELEVATION .. ") * -500"
+          trench_proximity = "0.15 - (maraxsis_surface_elevation - " .. maraxsis_constants.TRENCH_ENTRANCE_ELEVATION .. ")",
+          exclusion_area = "((maraxsis_surface_elevation - 0.01) < " .. maraxsis_constants.TRENCH_ENTRANCE_ELEVATION .. ") * -500"
         }
       },
       {
