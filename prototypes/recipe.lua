@@ -73,7 +73,7 @@ data:extend({
     {
         type = "recipe",
         name = "high-pressure-valve",
-        category = mods["maraxsis"] and "maraxsis-hydro-plant-or-advanced-crafting" or "advanced-crafting",
+        category = "advanced-crafting",
         ingredients = {
             {type="item", name="invar-plate", amount=1},
             {type="item", name="pipe", amount=2},
@@ -501,7 +501,7 @@ data:extend({
     {
         type = "recipe",
         name = "fluid-regulator",
-        category = mods["maraxsis"] and "maraxsis-hydro-plant-or-crafting" or "crafting",
+        category = "crafting",
         ingredients = {
             {type="item", name="high-pressure-valve", amount=1},
             {type="item", name="electric-motor", amount=1},
@@ -535,7 +535,7 @@ data:extend({
     {
         type = "recipe",
         name = "gimbaled-rocket-engine",
-        category = mods["maraxsis"] and "maraxsis-hydro-plant-or-advanced-crafting" or "advanced-crafting",
+        category = "advanced-crafting",
         ingredients = {
             {type="item", name="high-pressure-valve", amount=2},
             {type="item", name="motorized-arm", amount=1},
@@ -551,6 +551,47 @@ data:extend({
         enabled = false
     }
 })
+
+if mods["LunarLandings"] then
+    data:extend({
+        {
+            type = "recipe",
+            name = "pack-gimbaled-rocket-engine",
+            category = "crafting",
+            icon = "__IfNickel__/graphics/icons/gimbaled-rocket-engine-packed.png",
+            subgroup = "ll-packed-rocket-ingredients",
+            order = "x",
+            localised_name = { "recipe-name.ll-pack-rocket-ingredient", {"item-name.gimbaled-rocket-engine"} },
+            ingredients = {
+                {type="item", name="gimbaled-rocket-engine", amount=5},
+            },
+            results = {
+                {type="item", name="gimbaled-rocket-engine-packed", amount=1}
+            },
+            energy_required = 2,
+            allow_quality = false,
+            enabled = false
+        },
+        {
+            type = "recipe",
+            name = "unpack-gimbaled-rocket-engine",
+            category = "crafting",
+            icon = "__IfNickel__/graphics/icons/gimbaled-rocket-engine-packed.png",
+            subgroup = "ll-packed-rocket-ingredients",
+            order = "y",
+            localised_name = { "recipe-name.ll-unpack-rocket-ingredient", {"item-name.gimbaled-rocket-engine"} },
+            ingredients = {
+                {type="item", name="gimbaled-rocket-engine-packed", amount=1}
+            },
+            results = {
+                {type="item", name="gimbaled-rocket-engine", amount=5},
+            },
+            energy_required = 2,
+            allow_quality = false,
+            enabled = false
+        }
+    })
+end
 
 if mods["space-age"] then
     data:extend({
@@ -862,7 +903,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "non-reversible-tremie-pipe",
-            category = mods["maraxsis"] and "maraxsis-hydro-plant-or-advanced-crafting" or "advanced-crafting",
+            category = "advanced-crafting",
             ingredients = {
                 {type="item", name=mods["bztitanium"] and "self-regulating-valve" or "high-pressure-valve", amount=6},
                 {type="item", name="fluid-regulator", amount=6},
@@ -1014,7 +1055,7 @@ if mods["space-age"] and mods["bztitanium"] then
         {
             type = "recipe",
             name = "self-regulating-valve",
-            category = mods["maraxsis"] and "maraxsis-hydro-plant-or-advanced-crafting" or "advanced-crafting",
+            category = "advanced-crafting",
             ingredients = {
                 {type="item", name="high-pressure-valve", amount=1},
                 {type="item", name="nitinol-plate", amount=1},
