@@ -76,9 +76,12 @@ if data.raw.item["cooling-fan"] then
 end
 
 if misc.difficulty > 1 then
-    rm.AddIngredient("production-science-pack", "fluid-regulator", 6)
-    if mods["maraxsis"] then
-        rm.AddIngredient("maraxsis-deepsea-research-production-science-pack", "fluid-regulator", 6)
+    --in LL you will already have to make so many valves for rocket engines
+    if not mods["LunarLandings"] then
+        rm.AddIngredient("production-science-pack", "fluid-regulator", 6)
+        if mods["maraxsis"] then
+            rm.AddIngredient("maraxsis-deepsea-research-production-science-pack", "fluid-regulator", 6)
+        end
     end
 
     if mods["BrassTacks"] then
@@ -88,7 +91,17 @@ if misc.difficulty > 1 then
         end            
     end
 
-    tm.AddUnlock("rocket-silo", "gimbaled-rocket-engine", "-rocket-part")
+    if mods["space-age"] and mods["LunarLandings"] then
+        tm.AddUnlock("ll-luna-rocket-silo", "gimbaled-rocket-engine", "-rocket-part")
+        tm.AddUnlock("ll-luna-rocket-silo", "pack-gimbaled-rocket-engine", "-rocket-part")
+        tm.AddUnlock("ll-luna-rocket-silo", "unpack-gimbaled-rocket-engine", "-rocket-part")
+    else
+        tm.AddUnlock("rocket-silo", "gimbaled-rocket-engine", "-rocket-part")
+        if mods["LunarLandings"] then
+            tm.AddUnlock("rocket-silo", "gimbaled-rocket-engine", "-rocket-part")
+            tm.AddUnlock("rocket-silo", "gimbaled-rocket-engine", "-rocket-part")
+        end
+    end
 
     if mods["space-age"] then
         rm.AddIngredient("rocket-part", "gimbaled-rocket-engine", mods["planet-muluna"] and 2 or 1)
