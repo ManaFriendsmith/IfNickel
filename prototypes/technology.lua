@@ -5,7 +5,7 @@ data:extend({
     {
         type = "technology",
         name = "invar-processing",
-        icon = "__IfNickel__/graphics/technology/invar-processing.png",
+        icon = "__IfNickelMk2__/graphics/technology/invar-processing.png",
         icon_size = 256,
         effects = {
             {
@@ -30,7 +30,7 @@ data:extend({
     {
         type = "technology",
         name = "high-pressure-valve",
-        icon = "__IfNickel__/graphics/technology/high-pressure-valve.png",
+        icon = "__IfNickelMk2__/graphics/technology/high-pressure-valve.png",
         icon_size = 256,
         effects = {
             {
@@ -54,12 +54,12 @@ data:extend({
     }
 })
 
-if misc.difficulty > 1 and not mods["BrassTacks"] then
+if misc.difficulty > 1 and not mods["BrassTacksMk2"] then
     data:extend({
         {
             type = "technology",
             name = "mechanical-engineering",
-            icon = "__IfNickel__/graphics/technology/mechanical-engineering.png",
+            icon = "__IfNickelMk2__/graphics/technology/mechanical-engineering.png",
             icon_size = 256,
             effects = {
                 {
@@ -85,7 +85,7 @@ if misc.difficulty > 1 and mods["space-age"] then
         {
             type = "technology",
             name = "tissue-cultivation",
-            icon = "__IfNickel__/graphics/technology/tissue-cultivation.png",
+            icon = "__IfNickelMk2__/graphics/technology/tissue-cultivation.png",
             icon_size = 256,
             effects = {
                 {
@@ -128,7 +128,7 @@ if misc.difficulty > 1 and mods["space-age"] then
             name = "bioculture-productivity",
             icons = {
                 {
-                    icon = "__IfNickel__/graphics/technology/tissue-cultivation.png",
+                    icon = "__IfNickelMk2__/graphics/technology/tissue-cultivation.png",
                     icon_size = 256
                 },
                 {
@@ -185,7 +185,7 @@ if misc.difficulty > 1 and mods["space-age"] then
             name = "bioculture-productivity-6",
             icons = {
                 {
-                    icon = "__IfNickel__/graphics/technology/tissue-cultivation.png",
+                    icon = "__IfNickelMk2__/graphics/technology/tissue-cultivation.png",
                     icon_size = 256
                 },
                 {
@@ -244,7 +244,7 @@ if misc.difficulty > 1 and mods["space-age"] then
         }
     })
 
-    if mods["BrassTacks"] then
+    if mods["BrassTacksMk2"] then
         tm.AddUnlock("tissue-cultivation", "vestibular-bioculture")
         tm.AddUnlock("bioculture-productivity", {type="change-recipe-productivity", recipe="vestibular-bioculture", change=0.1})
         tm.AddUnlock("bioculture-productivity-6", {type="change-recipe-productivity", recipe="vestibular-bioculture", change=0.1})
@@ -262,7 +262,7 @@ if misc.difficulty == 3 and mods["space-age"] and mods["bztitanium"] then
         {
             type = "technology",
             name = "nitinol-processing",
-            icon = "__IfNickel__/graphics/technology/nitinol-processing.png",
+            icon = "__IfNickelMk2__/graphics/technology/nitinol-processing.png",
             icon_size = 256,
             effects = {
                 {
@@ -294,7 +294,7 @@ if misc.difficulty == 3 and mods["space-age"] and mods["bztitanium"] then
             name = "space-nitinol-processing",
             icons ={
                 {
-                    icon = "__IfNickel__/graphics/technology/nitinol-processing.png",
+                    icon = "__IfNickelMk2__/graphics/technology/nitinol-processing.png",
                     icon_size = 256,        
                 },
                 {

@@ -34,11 +34,11 @@ local function createOreParticle(ore, path, variants)
 end
 
 data:extend({
-  createOreParticle("nickel-ore", "__IfNickel__/graphics/particle", 4)
+  createOreParticle("nickel-ore", "__IfNickelMk2__/graphics/particle", 4)
 })
 
 if mods["space-age"] then
   data:extend({
-    createOreParticle("malachite", "__IfNickel__/graphics/particle", 4)
+    createOreParticle("malachite", "__IfNickelMk2__/graphics/particle", 4)
   })
 end

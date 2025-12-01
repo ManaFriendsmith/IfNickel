@@ -12,7 +12,7 @@ data:extend({
   {
     type = "resource",
     name = "nickel-ore",
-    icon = "__IfNickel__/graphics/icons/nickel-ore.png",
+    icon = "__IfNickelMk2__/graphics/icons/nickel-ore.png",
     icon_size = 64,
     icon_mipmaps = 4,
     flags = {"placeable-neutral"},
@@ -45,7 +45,7 @@ data:extend({
     {
       sheet =
       {
-        filename = "__IfNickel__/graphics/entity/nickel-ore.png",
+        filename = "__IfNickelMk2__/graphics/entity/nickel-ore.png",
         priority = "extra-high",
         size = 128,
         frame_count = 8,
@@ -77,7 +77,7 @@ if mods["space-age"] then
     {
       type = "resource",
       name = "malachite",
-      icon = "__IfNickel__/graphics/icons/malachite.png",
+      icon = "__IfNickelMk2__/graphics/icons/malachite.png",
       icon_size = 64,
       icon_mipmaps = 4,
       flags = {"placeable-neutral"},
@@ -99,7 +99,7 @@ if mods["space-age"] then
       {
         sheet =
         {
-          filename = "__IfNickel__/graphics/entity/malachite.png",
+          filename = "__IfNickelMk2__/graphics/entity/malachite.png",
           priority = "extra-high",
           size = 128,
           frame_count = 8,

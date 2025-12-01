@@ -7,14 +7,14 @@ data:extend({
     {
         type = "item",
         name = "nickel-ore",
-        icon = "__IfNickel__/graphics/icons/nickel-ore.png",
+        icon = "__IfNickelMk2__/graphics/icons/nickel-ore.png",
         icon_size = 64,
         mipmap_count = 4,
         pictures = {
-          { size = 64, filename = "__IfNickel__/graphics/icons/nickel-ore.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__IfNickel__/graphics/icons/nickel-ore-1.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__IfNickel__/graphics/icons/nickel-ore-2.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__IfNickel__/graphics/icons/nickel-ore-3.png", scale = 0.5, mipmap_count = 4 }
+          { size = 64, filename = "__IfNickelMk2__/graphics/icons/nickel-ore.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__IfNickelMk2__/graphics/icons/nickel-ore-1.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__IfNickelMk2__/graphics/icons/nickel-ore-2.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__IfNickelMk2__/graphics/icons/nickel-ore-3.png", scale = 0.5, mipmap_count = 4 }
         },
         subgroup = "raw-resource",
         order = "fb", -- f = copper
@@ -29,7 +29,7 @@ data:extend({
       {
         type = "item",
         name = "nickel-plate",
-        icon = "__IfNickel__/graphics/icons/nickel-plate.png",
+        icon = "__IfNickelMk2__/graphics/icons/nickel-plate.png",
         subgroup = "raw-material",
         order = "a[smelting]-bc",
         color_hint = { text = "N" },
@@ -43,7 +43,7 @@ data:extend({
       {
         type = "item",
         name = "invar-precursor",
-        icon = "__IfNickel__/graphics/icons/invar-precursor.png",
+        icon = "__IfNickelMk2__/graphics/icons/invar-precursor.png",
         subgroup = "raw-resource",
         order = "fbb",
         color_hint = { text = "I" },
@@ -58,7 +58,7 @@ data:extend({
       {
         type = "item",
         name = "invar-plate",
-        icon = "__IfNickel__/graphics/icons/invar-plate.png",
+        icon = "__IfNickelMk2__/graphics/icons/invar-plate.png",
         subgroup = "raw-material",
         order = "a[smelting]-bd",
         color_hint = { text = "I" },
@@ -72,7 +72,7 @@ data:extend({
       {
         type = "item",
         name = "electric-motor",
-        icon = "__IfNickel__/graphics/icons/electric-motor.png",
+        icon = "__IfNickelMk2__/graphics/icons/electric-motor.png",
         subgroup = "intermediate-product",
         order = "b[circuits]-1",
         inventory_move_sound = item_sounds.inserter_inventory_move,
@@ -85,7 +85,7 @@ data:extend({
       {
         type = "item",
         name = "high-pressure-valve",
-        icon = "__IfNickel__/graphics/icons/high-pressure-valve.png",
+        icon = "__IfNickelMk2__/graphics/icons/high-pressure-valve.png",
         subgroup = "intermediate-product",
         order = "c[advanced-intermediates]-2",
         inventory_move_sound = item_sounds.fluid_inventory_move,
@@ -103,14 +103,14 @@ if mods["space-age"] then
         {
             type = "item",
             name = "malachite",
-            icon = "__IfNickel__/graphics/icons/malachite.png",
+            icon = "__IfNickelMk2__/graphics/icons/malachite.png",
             icon_size = 64,
             mipmap_count = 4,
             pictures = {
-              { size = 64, filename = "__IfNickel__/graphics/icons/malachite.png", scale = 0.5, mipmap_count = 4 },
-              { size = 64, filename = "__IfNickel__/graphics/icons/malachite-1.png", scale = 0.5, mipmap_count = 4 },
-              { size = 64, filename = "__IfNickel__/graphics/icons/malachite-2.png", scale = 0.5, mipmap_count = 4 },
-              { size = 64, filename = "__IfNickel__/graphics/icons/malachite-3.png", scale = 0.5, mipmap_count = 4 }
+              { size = 64, filename = "__IfNickelMk2__/graphics/icons/malachite.png", scale = 0.5, mipmap_count = 4 },
+              { size = 64, filename = "__IfNickelMk2__/graphics/icons/malachite-1.png", scale = 0.5, mipmap_count = 4 },
+              { size = 64, filename = "__IfNickelMk2__/graphics/icons/malachite-2.png", scale = 0.5, mipmap_count = 4 },
+              { size = 64, filename = "__IfNickelMk2__/graphics/icons/malachite-3.png", scale = 0.5, mipmap_count = 4 }
             },
             subgroup = "raw-resource",
             order = "f]", --reaching new lows
@@ -178,7 +178,7 @@ if misc.difficulty == 3 or not mods["space-age"] then
     {
       type = "item",
       name = "cooling-fan",
-      icon = "__IfNickel__/graphics/icons/cooling-fan.png",
+      icon = "__IfNickelMk2__/graphics/icons/cooling-fan.png",
       subgroup = "intermediate-product",
       order = "b[circuits]-2",
       inventory_move_sound = item_sounds.plastic_inventory_move,
@@ -195,7 +195,7 @@ data:extend({
     {
       type = "item",
       name = "electromagnetic-coil",
-      icon = "__IfNickel__/graphics/icons/electromagnetic-coil.png",
+      icon = "__IfNickelMk2__/graphics/icons/electromagnetic-coil.png",
       subgroup = "intermediate-product",
       order = "b[circuits]-0",
       inventory_move_sound = item_sounds.electric_small_inventory_move,
@@ -208,7 +208,7 @@ data:extend({
   {
     type = "item",
     name = "fluid-regulator",
-    icon = "__IfNickel__/graphics/icons/fluid-regulator.png",
+    icon = "__IfNickelMk2__/graphics/icons/fluid-regulator.png",
     subgroup = "intermediate-product",
     order = "c[advanced-intermediates]-2a",
     inventory_move_sound = item_sounds.fluid_inventory_move,
@@ -221,7 +221,7 @@ data:extend({
   {
     type = "item",
     name = "motorized-arm",
-    icon = "__IfNickel__/graphics/icons/motorized-arm.png",
+    icon = "__IfNickelMk2__/graphics/icons/motorized-arm.png",
     subgroup = "intermediate-product",
     order = "c[advanced-intermediates]-2b",
     inventory_move_sound = item_sounds.inserter_inventory_move,
@@ -234,7 +234,7 @@ data:extend({
   {
     type = "item",
     name = "gimbaled-rocket-engine",
-    icon = "__IfNickel__/graphics/icons/gimbaled-rocket-engine.png",
+    icon = "__IfNickelMk2__/graphics/icons/gimbaled-rocket-engine.png",
     subgroup = "intermediate-product",
     order = "d[rocket-parts]-c",
     inventory_move_sound = item_sounds.flamethrower_inventory_move,
@@ -257,7 +257,7 @@ if mods["space-age"] then
     {
       type = "item",
       name = "stem-cells",
-      icon = "__IfNickel__/graphics/icons/stem-cells.png",
+      icon = "__IfNickelMk2__/graphics/icons/stem-cells.png",
       subgroup = "original-dint",
       order = "a",
       inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
@@ -272,7 +272,7 @@ if mods["space-age"] then
     {
       type = "item",
       name = "skeletal-bioculture",
-      icon = "__IfNickel__/graphics/icons/skeletal-bioculture.png",
+      icon = "__IfNickelMk2__/graphics/icons/skeletal-bioculture.png",
       subgroup = "original-dint",
       order = "c",
       inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
@@ -282,12 +282,12 @@ if mods["space-age"] then
       default_import_location = "gleba",
       weight = 1*kg,
       spoil_ticks = 5 * minute,
-      spoil_result = mods["BrassTacks"] and "linkages" or "iron-stick"
+      spoil_result = mods["BrassTacksMk2"] and "linkages" or "iron-stick"
     },
     {
       type = "item",
       name = "musculoskeletal-bioculture",
-      icon = "__IfNickel__/graphics/icons/musculoskeletal-bioculture.png",
+      icon = "__IfNickelMk2__/graphics/icons/musculoskeletal-bioculture.png",
       subgroup = "original-dint",
       order = "d",
       inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
@@ -302,7 +302,7 @@ if mods["space-age"] then
     {
       type = "item",
       name = "vascular-bioculture",
-      icon = "__IfNickel__/graphics/icons/vascular-bioculture.png",
+      icon = "__IfNickelMk2__/graphics/icons/vascular-bioculture.png",
       subgroup = "original-dint",
       order = "e",
       inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
@@ -317,7 +317,7 @@ if mods["space-age"] then
     {
       type = "item",
       name = "cardiac-bioculture",
-      icon = "__IfNickel__/graphics/icons/cardiac-bioculture.png",
+      icon = "__IfNickelMk2__/graphics/icons/cardiac-bioculture.png",
       subgroup = "original-dint",
       order = "f",
       inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
@@ -331,12 +331,12 @@ if mods["space-age"] then
     }
   })
 
-  if mods["BrassTacks"] then
+  if mods["BrassTacksMk2"] then
     data:extend({
       {
         type = "item",
         name = "vestibular-bioculture",
-        icon = "__IfNickel__/graphics/icons/vestibular-bioculture.png",
+        icon = "__IfNickelMk2__/graphics/icons/vestibular-bioculture.png",
         subgroup = "original-dint",
         order = "g",
         inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
@@ -358,7 +358,7 @@ if mods["LunarLandings"] then
         type = "item",
         name = "gimbaled-rocket-engine-packed",
         localised_name = { "item-name.ll-packed-rocket-ingredient", {"item-name.gimbaled-rocket-engine"} },
-        icon = "__IfNickel__/graphics/icons/gimbaled-rocket-engine-packed.png",
+        icon = "__IfNickelMk2__/graphics/icons/gimbaled-rocket-engine-packed.png",
         subgroup = "ll-packed-rocket-ingredients",
         order = "z",
         inventory_move_sound = item_sounds.flamethrower_inventory_move,
@@ -379,7 +379,7 @@ data:extend({
   {
     type = "item",
     name = "ambifacient-lunar-waneshaft",
-    icon = "__IfNickel__/graphics/icons/ambifacient-lunar-waneshaft.png",
+    icon = "__IfNickelMk2__/graphics/icons/ambifacient-lunar-waneshaft.png",
     subgroup = "intermediate-product",
     order = "c[advanced-intermediates]-a0",
     inventory_move_sound = item_sounds.metal_small_inventory_move,
@@ -392,7 +392,7 @@ data:extend({
   {
     type = "item",
     name = "grabber",
-    icon = "__IfNickel__/graphics/icons/grabber.png",
+    icon = "__IfNickelMk2__/graphics/icons/grabber.png",
     subgroup = "intermediate-product",
     order = "c[advanced-intermediates]-a0",
     inventory_move_sound = item_sounds.mechanical_inventory_move,
@@ -409,7 +409,7 @@ if mods["space-age"] and mods["bztitanium"] then
     {
       type = "item",
       name = "nitinol-precursor",
-      icon = "__IfNickel__/graphics/icons/nitinol-precursor.png",
+      icon = "__IfNickelMk2__/graphics/icons/nitinol-precursor.png",
       subgroup = "raw-resource",
       order = "fbc",
       inventory_move_sound = item_sounds.resource_inventory_move,
@@ -422,7 +422,7 @@ if mods["space-age"] and mods["bztitanium"] then
     {
       type = "item",
       name = "nitinol-plate",
-      icon = "__IfNickel__/graphics/icons/nitinol-plate.png",
+      icon = "__IfNickelMk2__/graphics/icons/nitinol-plate.png",
       subgroup = "raw-material",
       order = "a[smelting]-be",
       inventory_move_sound = item_sounds.metal_small_inventory_move,
@@ -436,7 +436,7 @@ if mods["space-age"] and mods["bztitanium"] then
     {
       type = "item",
       name = "self-regulating-valve",
-      icon = "__IfNickel__/graphics/icons/self-regulating-valve.png",
+      icon = "__IfNickelMk2__/graphics/icons/self-regulating-valve.png",
       subgroup = "intermediate-product",
       order = "c[advanced-intermediates]-2a1",
       inventory_move_sound = item_sounds.fluid_inventory_move,
@@ -456,7 +456,7 @@ if mods["space-age"] then
     {
       type = "item",
       name = "non-reversible-tremie-pipe",
-      icon = "__IfNickel__/graphics/icons/non-reversible-tremie-pipe.png",
+      icon = "__IfNickelMk2__/graphics/icons/non-reversible-tremie-pipe.png",
       subgroup = "intermediate-product",
       order = "c[advanced-intermediates]-2a2",
       inventory_move_sound = item_sounds.fluid_inventory_move,
@@ -469,7 +469,7 @@ if mods["space-age"] then
     {
       type = "item",
       name = "epip-eimert-elbisrever-non",
-      icon = "__IfNickel__/graphics/icons/epip-eimert-elbisrever-non.png",
+      icon = "__IfNickelMk2__/graphics/icons/epip-eimert-elbisrever-non.png",
       inventory_move_sound = item_sounds.fluid_inventory_move,
       pick_sound = item_sounds.fluid_inventory_pickup,
       drop_sound = item_sounds.fluid_inventory_move,
@@ -508,7 +508,7 @@ if mods["space-age"] then
     {
       type = "item",
       name = "mutagenic-sludge",
-      icon = "__IfNickel__/graphics/icons/mutagenic-sludge.png",
+      icon = "__IfNickelMk2__/graphics/icons/mutagenic-sludge.png",
       subgroup = "original-dint",
       order = "y",
       inventory_move_sound = sludge_drop,
@@ -525,7 +525,7 @@ if mods["space-age"] then
     {
       type = "item",
       name = "bubbling-mutagenic-sludge",
-      icon = "__IfNickel__/graphics/icons/bubbling-mutagenic-sludge.png",
+      icon = "__IfNickelMk2__/graphics/icons/bubbling-mutagenic-sludge.png",
       subgroup = "original-dint",
       order = "z",
       inventory_move_sound = sludge_drop,

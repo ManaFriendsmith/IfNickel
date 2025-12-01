@@ -99,7 +99,7 @@ if mods["Paracelsin"] then
         end
     end
 
-    if not (mods["ThemTharHills"] and misc.difficulty > 1) then
+    if not (mods["ThemTharHillsMk2"] and misc.difficulty > 1) then
         rm.AddIngredient("mechanical-plant", "electric-motor", 20)
     end
 

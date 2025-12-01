@@ -20,7 +20,7 @@ if mods["space-age"] then
           type = "produce-achievement",
           name = "reverse-squiggly",
           order = "k",
-          icon = "__IfNickel__/graphics/achievement/reverse-squiggly.png",
+          icon = "__IfNickelMk2__/graphics/achievement/reverse-squiggly.png",
           icon_size = 128,
           item_product = "epip-eimert-elbisrever-non",
           limited_to_one_game = false,

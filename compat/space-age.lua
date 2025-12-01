@@ -15,7 +15,7 @@ if misc.difficulty > 1 then
 end
 
 if misc.difficulty > 1 then
-    if mods["BrassTacks"] then
+    if mods["BrassTacksMk2"] then
         rm.ReplaceIngredientProportional("asteroid-collector", "complex-joint", "motorized-arm", 1, 10)
     else
         rm.AddIngredient("asteroid-collector", "motorized-arm", 10)
@@ -39,14 +39,14 @@ end
 tm.AddUnlock("foundry", "molten-nickel-from-lava", "molten-copper-from-lava")
 tm.RemoveUnlock("foundry", "molten-copper-from-lava")
 tm.AddUnlock("full-spectrum-magmallurgy", "molten-copper-from-lava")
-if mods["BrimStuff"] then
+if mods["BrimStuffMk2"] then
     rm.AddIngredient("molten-copper-from-lava", "malachite", 10)
 end
 --data.raw.recipe["molten-copper-from-lava"].hidden = true
 --data.raw.recipe["molten-copper-from-lava"].hidden_in_factoriopedia = true
 tm.AddUnlock("foundry", "copper-ore-from-malachite", "molten-nickel-from-lava")
 
-tm.AddUnlock("foundry", "molten-nickel", mods["BrassTacks"] and "molten-zinc" or "molten-copper")
+tm.AddUnlock("foundry", "molten-nickel", mods["BrassTacksMk2"] and "molten-zinc" or "molten-copper")
 tm.AddUnlock("foundry", "copper-ore-from-malachite", "-molten-iron")
 tm.AddUnlock("foundry", "casting-nickel", "-casting-steel")
 tm.AddUnlock("foundry", "casting-invar", "-casting-steel")
@@ -58,7 +58,7 @@ else
     rm.ReplaceIngredientProportional("foundry", "electronic-circuit", "electric-motor", 1, 10)
 end
 
-if mods["BrassTacks"] then
+if mods["BrassTacksMk2"] then
     --keep ingredient count down
     rm.ReplaceIngredientProportional("foundry", "steel-plate", "invar-plate")
 else
@@ -77,7 +77,7 @@ if misc.starting_planet == "vulcanus" then
     tm.SetTechnologyTrigger("invar-processing", "nickel-plate")
     tm.SetTechnologyTrigger("high-pressure-valve", "invar-plate")
 
-    if misc.difficulty > 1 and not mods["BrassTacks"] then
+    if misc.difficulty > 1 and not mods["BrassTacksMk2"] then
         tm.RemoveSciencePack("mechanical-engineering", "logistic-science-pack")
         tm.RemovePrerequisite("mechanical-engineering", "logistic-science-pack")
         tm.AddPrerequisite("mechanical-engineering", "automation-science-pack")
@@ -88,7 +88,7 @@ else
     table.insert(data.raw["simple-entity"]["big-volcanic-rock"].minable.results, {type="item", name="nickel-ore", amount_min=2, amount_max=5})
 end
 
-if mods["LasingAround"] then
+if mods["LasingAroundMk2"] then
     rm.AddIngredient("lavaser", "invar-plate", 5)
     if misc.difficulty > 1 then
         if misc.starting_planet == "fulgora" then
@@ -102,9 +102,9 @@ if mods["LasingAround"] then
 end
 
 --GLEBA
-tm.AddUnlock(mods["BrassTacks"] and "jellynut" or "yumako", "nickel-bacteria")
+tm.AddUnlock(mods["BrassTacksMk2"] and "jellynut" or "yumako", "nickel-bacteria")
 
-if mods["BrassTacks"] then
+if mods["BrassTacksMk2"] then
     table.insert(data.raw["simple-entity"]["iron-stromatolite"].minable.results, {type="item", name="nickel-ore", amount_min=8, amount_max=16})
 else
     table.insert(data.raw["simple-entity"]["copper-stromatolite"].minable.results, {type="item", name="nickel-ore", amount_min=4, amount_max=8})
@@ -149,7 +149,7 @@ if rm.GetIngredientCount("battery", "nickel-plate") == 0 then
     motor_chance = 0.1
 end
 
-if misc.difficulty > 1 and mods["LasingAround"] then
+if misc.difficulty > 1 and mods["LasingAroundMk2"] then
     motor_chance = motor_chance - 0.01
     rm.AddProduct("custom-weird-alien-gizmo-recycling", {type="item", name="electric-motor", amount=1, probability=0.2})
 end
@@ -211,7 +211,7 @@ if misc.difficulty == 3 then
 
     rm.AddIngredient("cryogenic-plant", "non-reversible-tremie-pipe", 10)
 
-    if mods["ThemTharHills"] then
+    if mods["ThemTharHillsMk2"] then
         rm.ReplaceIngredientProportional("hydrocoptic-marzelvane", "pipe", "fluid-regulator", 0.3)
     end
 

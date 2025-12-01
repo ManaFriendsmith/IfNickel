@@ -99,7 +99,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "invar-separation",
-            icon = "__IfNickel__/graphics/icons/invar-separation.png",
+            icon = "__IfNickelMk2__/graphics/icons/invar-separation.png",
             icon_size = 64,
             category = "centrifuging",
             ingredients = {
@@ -199,7 +199,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "copper-ore-from-malachite",
-            icon = "__IfNickel__/graphics/icons/copper-ore-from-malachite.png",
+            icon = "__IfNickelMk2__/graphics/icons/copper-ore-from-malachite.png",
             icon_size = 64,
             icon_mipmaps = 4,
             subgroup = "vulcanus-processes",
@@ -228,7 +228,7 @@ if mods["space-age"] then
             order = "e[bacteria]-a[bacteria]-d",
             category = "organic",
             ingredients = {
-                {type="item", name=mods["BrassTacks"] and "iron-bacteria" or "copper-bacteria", amount=3},
+                {type="item", name=mods["BrassTacksMk2"] and "iron-bacteria" or "copper-bacteria", amount=3},
                 {type="item", name="philosophers-hormone", amount=1},
             },
             results = {
@@ -257,7 +257,7 @@ if mods["space-age"] then
                         icon_size = 64
                     },
                     {
-                        icon = "__IfNickel__/graphics/icons/nickel-ore.png",
+                        icon = "__IfNickelMk2__/graphics/icons/nickel-ore.png",
                         icon_size = 64,
                         scale = 0.25,
                         shift = {0, 8}
@@ -558,7 +558,7 @@ if mods["LunarLandings"] then
             type = "recipe",
             name = "pack-gimbaled-rocket-engine",
             category = "crafting",
-            icon = "__IfNickel__/graphics/icons/gimbaled-rocket-engine-packed.png",
+            icon = "__IfNickelMk2__/graphics/icons/gimbaled-rocket-engine-packed.png",
             subgroup = "ll-packed-rocket-ingredients",
             order = "x",
             localised_name = { "recipe-name.ll-pack-rocket-ingredient", {"item-name.gimbaled-rocket-engine"} },
@@ -576,7 +576,7 @@ if mods["LunarLandings"] then
             type = "recipe",
             name = "unpack-gimbaled-rocket-engine",
             category = "crafting",
-            icon = "__IfNickel__/graphics/icons/gimbaled-rocket-engine-packed.png",
+            icon = "__IfNickelMk2__/graphics/icons/gimbaled-rocket-engine-packed.png",
             subgroup = "ll-packed-rocket-ingredients",
             order = "y",
             localised_name = { "recipe-name.ll-unpack-rocket-ingredient", {"item-name.gimbaled-rocket-engine"} },
@@ -625,7 +625,7 @@ if mods["space-age"] then
                 {type="item", name="philosophers-hormone", amount=1},
             },
             results = {
-                {type="item", name="skeletal-bioculture", amount=mods["BrassTacks"] and 3 or 8}
+                {type="item", name="skeletal-bioculture", amount=mods["BrassTacksMk2"] and 3 or 8}
             },
             energy_required = 3,
             allow_productivity = true,
@@ -645,7 +645,7 @@ if mods["space-age"] then
                 {type="item", name="stem-cells", amount=1},
                 {type="item", name="nickel-bacteria", amount=1},
                 {type="item", name="bioflux", amount=1},
-                {type="item", name="skeletal-bioculture", amount=mods["BrassTacks"] and 1 or 2},
+                {type="item", name="skeletal-bioculture", amount=mods["BrassTacksMk2"] and 1 or 2},
             },
             results = {
                 {type="item", name="musculoskeletal-bioculture", amount=1}
@@ -707,7 +707,7 @@ if mods["space-age"] then
         }
     })
 
-    if mods["BrassTacks"] then
+    if mods["BrassTacksMk2"] then
         data:extend({
             {
                 type = "recipe",
@@ -783,7 +783,7 @@ if mods["space-age"] then
             name = "organ-preservation",
             icons = {
                 {
-                    icon = "__IfNickel__/graphics/icons/cardiac-bioculture.png",
+                    icon = "__IfNickelMk2__/graphics/icons/cardiac-bioculture.png",
                     icon_size = 64
                 },
                 {
@@ -821,7 +821,7 @@ if mods["space-age"] then
             order = "y",
             icons = {
                 {
-                    icon = "__IfNickel__/graphics/icons/mutagenic-sludge.png",
+                    icon = "__IfNickelMk2__/graphics/icons/mutagenic-sludge.png",
                     icon_size = 64
                 },
                 {
@@ -858,7 +858,7 @@ if mods["space-age"] then
             order = "z",
             icons = {
                 {
-                    icon = "__IfNickel__/graphics/icons/mutagenic-sludge.png",
+                    icon = "__IfNickelMk2__/graphics/icons/mutagenic-sludge.png",
                     icon_size = 64
                 },
                 {
@@ -889,7 +889,7 @@ if mods["space-age"] then
         }
     })
     
-    if mods["BrassTacks"] then
+    if mods["BrassTacksMk2"] then
         rm.AddProduct("bacterium-extraction-from-sludge", {type="item", name="zinc-bacteria", amount=1, probability=0.05})
     end
     rm.AddProduct("musculoskeletal-bioculture", {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, probability=0.05})
@@ -929,7 +929,7 @@ if mods["space-age"] then
                         icon_size = 64
                       },
                       {
-                        icon = "__IfNickel__/graphics/icons/non-reversible-tremie-pipe.png",
+                        icon = "__IfNickelMk2__/graphics/icons/non-reversible-tremie-pipe.png",
                         icon_size = 64
                       },
                       {
@@ -964,7 +964,7 @@ if mods["space-age"] then
                         icon_size = 64
                       },
                       {
-                        icon = "__IfNickel__/graphics/icons/epip-eimert-elbisrever-non.png",
+                        icon = "__IfNickelMk2__/graphics/icons/epip-eimert-elbisrever-non.png",
                         icon_size = 64
                       },
                       {
@@ -1079,7 +1079,7 @@ if mods["space-age"] and mods["castra"] then
             name = "ambifacient-lunar-waneshaft-gunpowder",
             icons = {
                 {
-                    icon = "__IfNickel__/graphics/icons/ambifacient-lunar-waneshaft.png",
+                    icon = "__IfNickelMk2__/graphics/icons/ambifacient-lunar-waneshaft.png",
                     icon_size = 64,
                     scale = 0.7,
                     shift = {0, -10}
@@ -1094,7 +1094,7 @@ if mods["space-age"] and mods["castra"] then
             category = "advanced-crafting",
             ingredients = {
                 {type="item", name="invar-plate", amount=1},
-                {type="item", name=mods["BrassTacks"] and "galvanized-rod" or "iron-stick", amount=4},
+                {type="item", name=mods["BrassTacksMk2"] and "galvanized-rod" or "iron-stick", amount=4},
                 {type="item", name="gunpowder", amount=5}
             },
             results = {

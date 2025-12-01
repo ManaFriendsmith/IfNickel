@@ -21,27 +21,27 @@ if misc.difficulty == 3 then
     --what is the engine block made of? i don't care. nitrogen. go away
 
     tm.AddUnlock("engine", "ambifacient-lunar-waneshaft", "-engine-unit")
-    if not mods["BrassTacks"] then
+    if not mods["BrassTacksMk2"] then
         rm.ReplaceIngredientProportional("motorized-arm", "iron-stick", "ambifacient-lunar-waneshaft", 0.16)
         tm.AddUnlock("mechanical-engineering", "ambifacient-lunar-waneshaft")
     end
 end
 
-if misc.difficulty > 1 and mods["BrassTacks"] then
+if misc.difficulty > 1 and mods["BrassTacksMk2"] then
     tm.AddUnlock("mechanical-engineering", "motorized-arm")
     rm.ReplaceIngredientProportional("gyro", "iron-gear-wheel", "electric-motor", 0.5)
     if misc.difficulty == 3 then
         tm.AddUnlock("electric-engine", "grabber")
     end
 elseif difficulty == 3 then
-    data.raw.technology["electric-engine"].icon = "__IfNickel__/graphics/technology/mechanical-engineering-2.png"
+    data.raw.technology["electric-engine"].icon = "__IfNickelMk2__/graphics/technology/mechanical-engineering-2.png"
     data.raw.technology["electric-engine"].localised_name = {"technology-name.mechanical-engineering-2"}
     data.raw.technology["electric-engine"].localised_description = {"technology-description.mechanical-engineering-2"}
     data.raw.technology["electric-engine"].unit.count = 100
     tm.AddUnlock("electric-engine", "grabber")
 end
 
-if mods["ThemTharHills"] and misc.difficulty == 2 then
+if mods["ThemTharHillsMk2"] and misc.difficulty == 2 then
     if mods["space-age"] then
         rm.ReplaceIngredientProportional("stepper-motor", "iron-gear-wheel", "nickel-plate", 2)
     else
@@ -55,7 +55,7 @@ if misc.difficulty > 1 then
     if misc.difficulty == 3 then
         tm.AddUnlock("electronics", "electromagnetic-coil", "-electric-motor")
     else
-        if mods["ThemTharHills"] then
+        if mods["ThemTharHillsMk2"] then
             tm.AddUnlock("gold-electronics", "electromagnetic-coil", "advanced-circuit")
         else
             tm.AddUnlock("advanced-circuit", "electromagnetic-coil", "advanced-circuit")
@@ -84,7 +84,7 @@ if misc.difficulty > 1 then
         end
     end
 
-    if mods["BrassTacks"] then
+    if mods["BrassTacksMk2"] then
         rm.ReplaceIngredientProportional("hardened-hull", "iron-plate", "invar-plate")
         if misc.difficulty == 2 then
             tm.AddPrerequisite("hardened-hull", "invar-processing")
@@ -139,7 +139,7 @@ else
     end
 end
 
-if mods["ThemTharHills"] and misc.difficulty > 1 then
+if mods["ThemTharHillsMk2"] and misc.difficulty > 1 then
     rm.ReplaceIngredientProportional("transceiver", "iron-stick", "electromagnetic-coil")
     if misc.difficulty == 2 then
         rm.ReplaceIngredientProportional("stepper-motor", "copper-plate", "electromagnetic-coil", mods["space-age"] and 1 or 2)
@@ -148,7 +148,7 @@ if mods["ThemTharHills"] and misc.difficulty > 1 then
     end
 end
 
-if mods["ThemTharHills"] then
+if mods["ThemTharHillsMk2"] then
     rm.AddProduct("trace-metals-from-copper", {type="item", name="nickel-ore", amount=1, probability=0.1})
 end
 
@@ -156,7 +156,7 @@ end
 
 --BELTS
 
-if misc.difficulty == 3 or not mods["BrimStuff"] then
+if misc.difficulty == 3 or not mods["BrimStuffMk2"] then
     --greater complexity earlier adds more difficulty than greater cost later
     rm.AddIngredient("fast-transport-belt", "electric-motor", 1)
     rm.AddIngredient("fast-underground-belt", "electric-motor", 8)
@@ -234,7 +234,7 @@ end
 
 if misc.difficulty == 3 then
     if data.raw.item["tinned-cable"] then
-        if mods["BrassTacks"] then
+        if mods["BrassTacksMk2"] then
             rm.ReplaceIngredientProportional("programmable-speaker", "galvanized-panel", "electromagnetic-coil", 1)
         else
             rm.ReplaceIngredientProportional("programmable-speaker", "iron-plate", "electromagnetic-coil", 1)
@@ -246,7 +246,7 @@ end
 
 --ROBOTICS
 
-if not (mods["ThemTharHills"] and misc.difficulty > 1) then
+if not (mods["ThemTharHillsMk2"] and misc.difficulty > 1) then
     rm.ReplaceIngredientProportional("roboport", "iron-gear-wheel", "electric-motor", 1, 15)
 
     rm.AddIngredient("passive-provider-chest", "electric-motor", 1)
@@ -280,7 +280,7 @@ end
 
 --MODULES
 
-if misc.difficulty > 1 and not mods["ThemTharHills"] then
+if misc.difficulty > 1 and not mods["ThemTharHillsMk2"] then
     rm.ReplaceIngredientProportional("beacon", "electronic-circuit", "electromagnetic-coil", 1.5)
 end
 
@@ -349,7 +349,7 @@ if rm.GetIngredientCount("centrifuge", "electric-engine-unit") == 0 then
     rm.AddIngredient("centrifuge", "electric-engine-unit", 10)
 end
 
-if misc.difficulty > 1 and not mods["BrassTacks"] then
+if misc.difficulty > 1 and not mods["BrassTacksMk2"] then
     rm.AddIngredient("assembling-machine-3", "motorized-arm", 6)
 end
 
@@ -369,14 +369,14 @@ if mods["quality"] then
     end
 end
 
-if mods["BrassTacks"] and data.raw.item["nitinol-plate"] then
+if mods["BrassTacksMk2"] and data.raw.item["nitinol-plate"] then
     rm.AddIngredient("advanced-electroplating-machine", "self-regulating-valve", 5)
 end
 
 --MINING
 rm.AddIngredient("electric-mining-drill", "nickel-plate", 5)
 rm.AddIngredient("electric-mining-drill", "electric-motor", 3)
-if mods["BrassTacks"] and misc.difficulty > 1 then
+if mods["BrassTacksMk2"] and misc.difficulty > 1 then
     rm.RemoveIngredient("electric-mining-drill", "electronic-circuit", 99999)
 end
 rm.AddIngredient("pumpjack", "electric-motor", 5)

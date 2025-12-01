@@ -10,7 +10,7 @@ if mods["bztin"] then
             tm.AddPrerequisite("high-pressure-valve", "tinned-cable")
         end
 
-        if misc.difficulty == 2 and not mods["ThemTharHills"] then
+        if misc.difficulty == 2 and not mods["ThemTharHillsMk2"] then
             rm.ReplaceIngredientProportional("electromagnetic-coil", "copper-cable", "tinned-cable")
         end
 

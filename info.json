@@ -1,10 +1,11 @@
 {
-  "name": "IfNickel",
+  "name": "IfNickelMk2",
   "version": "2.0.0",
-  "title": "If I Had A Nickel",
+  "title": "If I Had A Nickel Mk. 2",
   "author": "planetfall",
   "homepage": "",
-  "description": "Adds nickel ore and plates, invar alloy, and some mechanical components.",
+  "source": "https://github.com/ManaFriendsmith/IfNickelMk2",
+  "description": "More Materials: Nickel, invar, motors, and valves.",
   "factorio_version": "2.0",
-  "dependencies": ["base >= 2.0", "pf-functions", "? space-age", "? pf-sa-compat", "~ ZZZ-RecyclerFinalFinal", "? BrassTacks", "? maraxsis", "? Paracelsin", "? castra", "? LunarLandings"]
+  "dependencies": ["base >= 2.0", "pf-functions", "? space-age", "? pf-sa-compat", "~ ZZZ-RecyclerFinalFinal", "? BrassTacksMk2", "? maraxsis", "? Paracelsin", "? castra", "? LunarLandings"]
 }
