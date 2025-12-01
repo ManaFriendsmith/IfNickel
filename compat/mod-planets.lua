@@ -2,6 +2,43 @@ local rm = require("__pf-functions__/recipe-manipulation")
 local tm = require("__pf-functions__/technology-manipulation")
 local misc = require("__pf-functions__/misc")
 
+if mods["LunarLandings"] then
+    if misc.difficulty > 1 then
+        rm.AddIngredient("ll-rocket-part-nauvis", "gimbaled-rocket-engine", 5)
+        rm.AddIngredient("ll-rocket-part-luna", "gimbaled-rocket-engine", 5)
+        rm.AddIngredient("ll-rocket-part-interstellar", "gimbaled-rocket-engine", 5)
+        rm.AddProduct("ll-used-rocket-part-recycling", {type="item", name="gimbaled-rocket-engine", amount_min=2, amount_max=4})
+
+        rm.AddRecipeCategory("electromagnetic-coil", "circuit-crafting")
+    end
+    rm.AddRecipeCategory("electric-motor", "circuit-crafting")
+
+    rm.ReplaceIngredientProportional("ll-heat-shielding", "steel-plate", "invar-plate")
+
+    if misc.difficulty == 3 then
+        rm.ReplaceIngredientProportional("ll-low-grav-assembling-machine", "advanced-circuit", "motorized-arm")
+
+        rm.AddIngredient("ll-ion-logistic-robot", "grabber", 5)
+        rm.AddIngredient("ll-ion-construction-robot", "grabber", 1)
+    elseif misc.difficulty == 2 then
+        rm.AddIngredient("ll-ion-logistic-robot", "motorized-arm", 3)
+        rm.AddIngredient("ll-ion-construction-robot", "motorized-arm", 3)
+    end
+
+    if mods["space-age"] and misc.difficulty == 3 then
+        rm.AddIngredient("ll-processing-unit-without-silicon", "cooling-fan", 1)
+    end
+
+    if mods["space-age"] and misc.difficulty > 1 then
+        tm.AddSciencePack("bioculture-productivity", "ll-space-science-pack")
+        tm.AddSciencePack("bioculture-productivity", "ll-quantum-science-pack")
+    end
+
+    if not data.raw.item["stepper-motor"] then
+        rm.AddIngredient("ll-ion-roboport", "electric-motor", 50)
+    end
+end
+
 --mods that just use vanilla-like ore generation will not get special design effort
 if mods["tenebris"] then
     data.raw.planet["tenebris"].map_gen_settings.autoplace_controls["nickel-ore"] = {}
@@ -24,11 +61,20 @@ if mods["maraxsis"] then
     if misc.difficulty == 3 then
         rm.AddIngredient("maraxsis-hydro-plant", "non-reversible-tremie-pipe", 1)
         rm.AddIngredient("maraxsis-salt-reactor", "non-reversible-tremie-pipe", 10)
+        rm.AddIngredient("maraxsis-empty-research-vessel", "non-reversible-tremie-pipe", 1)
+    else
+        rm.AddIngredient("maraxsis-empty-research-vessel", "high-pressure-valve", 3)
     end
 
     if misc.difficulty > 1 then
         tm.AddSciencePack("bioculture-productivity-6", "hydraulic-science-pack")
     end
+
+    rm.AddRecipeCategory("high-pressure-valve", "maraxsis-hydro-plant")
+    rm.AddRecipeCategory("fluid-regulator", "maraxsis-hydro-plant")
+    rm.AddRecipeCategory("gimbaled-rocket-engine", "maraxsis-hydro-plant")
+    rm.AddRecipeCategory("non-reversible-tremie-pipe", "maraxsis-hydro-plant")
+    rm.AddRecipeCategory("self-regulating-valve", "maraxsis-hydro-plant")
 end
 
 --cerys: I'm really not sure if you can obtain all ores in decent ratios from recycling stuff.
