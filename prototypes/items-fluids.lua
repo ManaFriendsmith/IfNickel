@@ -240,7 +240,7 @@ data:extend({
     inventory_move_sound = item_sounds.flamethrower_inventory_move,
     pick_sound = item_sounds.explosives_inventory_move,
     drop_sound = item_sounds.flamethrower_inventory_move,
-    stack_size = 20,
+    stack_size = mods["LunarLandings"] and 50 or 20,
     default_import_location = "nauvis",
     weight = 5*kg
   }
@@ -350,6 +350,25 @@ if mods["space-age"] then
       }
     })
   end
+end
+
+if mods["LunarLandings"] then
+  data:extend({
+      {
+        type = "item",
+        name = "gimbaled-rocket-engine-packed",
+        localised_name = { "item-name.ll-packed-rocket-ingredient", {"item-name.gimbaled-rocket-engine"} },
+        icon = "__IfNickel__/graphics/icons/gimbaled-rocket-engine-packed.png",
+        subgroup = "ll-packed-rocket-ingredients",
+        order = "z",
+        inventory_move_sound = item_sounds.flamethrower_inventory_move,
+        pick_sound = item_sounds.explosives_inventory_move,
+        drop_sound = item_sounds.flamethrower_inventory_move,
+        stack_size = 10,
+        default_import_location = "nauvis",
+        weight = 25*kg
+     }
+  })
 end
 
 if misc.difficulty == 2 then
