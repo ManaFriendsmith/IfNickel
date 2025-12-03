@@ -9,3 +9,5 @@ end
 if mods["planet-muluna"] and misc.difficulty == 3 then
     rm.AddIngredient("rocket-part-muluna", "gimbaled-rocket-engine")
 end
+
+require("compat.deadlock")
