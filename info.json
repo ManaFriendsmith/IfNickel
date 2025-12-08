@@ -7,5 +7,5 @@
   "source": "https://github.com/ManaFriendsmith/IfNickelMk2",
   "description": "More Materials: Nickel, invar, motors, and valves.",
   "factorio_version": "2.0",
-  "dependencies": ["base >= 2.0", "pf-functions", "? space-age", "? pf-sa-compat", "~ ZZZ-RecyclerFinalFinal", "? BrassTacksMk2", "? maraxsis", "? Paracelsin", "? castra", "? LunarLandings"]
+  "dependencies": ["base >= 2.0", "pf-functions", "? space-age", "? pf-sa-compat", "? BrassTacksMk2", "? maraxsis", "? Paracelsin", "? castra", "? LunarLandings"]
 }

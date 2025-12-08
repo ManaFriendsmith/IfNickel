@@ -52,7 +52,6 @@ data:extend({
         drop_sound = item_sounds.resource_inventory_move,
         stack_size = 50,
         default_import_location = "nauvis",
-        canonical_recipe = true,
         weight = 1*kg
       },
       {
@@ -463,6 +462,7 @@ if mods["space-age"] then
       pick_sound = item_sounds.fluid_inventory_pickup,
       drop_sound = item_sounds.fluid_inventory_move,
       stack_size = 50,
+      auto_recycle = false,
       default_import_location = "gleba",
       weight = 10*kg,
     },
@@ -477,7 +477,7 @@ if mods["space-age"] then
       default_import_location = "gleba",
       weight = 10*kg,
       spoil_ticks = 20 * 60,
-      canonical_recipe = false,
+      auto_recycle = false,
       hidden_in_factoriopedia = true,
       hidden = true,
       spoil_to_trigger_result =
@@ -518,7 +518,7 @@ if mods["space-age"] then
       flags = {"not-stackable"},
       default_import_location = "gleba",
       weight = 100*kg,
-      canonical_recipe = false, -- no recycling!
+      auto_recycle = false,
       spoil_ticks = 3 * minute,
       spoil_result = "bubbling-mutagenic-sludge",
     },
@@ -535,7 +535,7 @@ if mods["space-age"] then
       flags = {"not-stackable"},
       default_import_location = "gleba",
       weight = 100*kg,
-      canonical_recipe = false, -- no recycling!
+      auto_recycle = false,
       spoil_ticks = 30 * second,
       spoil_to_trigger_result =
       {

@@ -111,6 +111,7 @@ if mods["space-age"] then
                 {type="item", name="nickel-ore", amount=1, probability = 0.12}
             },
             subgroup = "fulgora-processes",
+            auto_recycle = false,
             order = "a[trash]-ac",
             energy_required = 0.25,
             allow_productivity = false,
@@ -135,6 +136,7 @@ if mods["space-age"] then
             results = {
                 {type="fluid", name="molten-nickel", amount=500, fluidbox_multiplier=10}
             },
+            auto_recycle = false,
             energy_required = 16,
             allow_productivity = true,
             enabled = false
@@ -156,6 +158,7 @@ if mods["space-age"] then
                 {type="fluid", name="molten-nickel", amount=250, fluidbox_multiplier=10},
                 {type="item", name="stone", amount=15},
             },
+            auto_recycle = false,
             energy_required = 16,
             allow_productivity = true,
             enabled = false
@@ -174,6 +177,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="nickel-plate", amount=2}
             },
+            auto_recycle = false,
             energy_required = 3.2,
             allow_productivity = true,
             enabled = false
@@ -193,6 +197,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="invar-plate", amount=1}
             },
+            auto_recycle = false,
             energy_required = 3.2,
             allow_productivity = true,
             enabled = false
@@ -215,6 +220,7 @@ if mods["space-age"] then
                 {type="item", name="copper-ore", amount=35},
                 {type="item", name="carbon", amount=10}
             },
+            auto_recycle = false,
             energy_required = 20,
             allow_productivity = true,
             enabled = false
@@ -236,6 +242,7 @@ if mods["space-age"] then
                 {type="item", name="nickel-bacteria", amount=3}
             },
             energy_required = 2,
+            auto_recycle = false,
             allow_productivity = true,
             result_is_always_fresh = true,
             enabled = false,
@@ -275,6 +282,7 @@ if mods["space-age"] then
                 results = {
                     {type="item", name="nickel-ore", amount=5}
                 },
+                auto_recycle = false,
                 energy_required = 15,
                 enabled = false
             }
@@ -569,6 +577,7 @@ if mods["LunarLandings"] then
             results = {
                 {type="item", name="gimbaled-rocket-engine-packed", amount=1}
             },
+            auto_recycle = false,
             energy_required = 2,
             allow_quality = false,
             enabled = false
@@ -587,6 +596,7 @@ if mods["LunarLandings"] then
             results = {
                 {type="item", name="gimbaled-rocket-engine", amount=5},
             },
+            auto_recycle = false,
             energy_required = 2,
             allow_quality = false,
             enabled = false
@@ -606,6 +616,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="stem-cells", amount=6}
             },
+            auto_recycle = false,
             energy_required = 2,
             allow_productivity = true,
             result_is_always_fresh = true,
@@ -628,6 +639,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="skeletal-bioculture", amount=mods["BrassTacksMk2"] and 3 or 8}
             },
+            auto_recycle = false,
             energy_required = 3,
             allow_productivity = true,
             result_is_always_fresh = true,
@@ -651,6 +663,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="musculoskeletal-bioculture", amount=1}
             },
+            auto_recycle = false,
             energy_required = 3,
             allow_productivity = true,
             result_is_always_fresh = true,
@@ -673,6 +686,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="vascular-bioculture", amount=4}
             },
+            auto_recycle = false,
             energy_required = 3,
             allow_productivity = true,
             result_is_always_fresh = true,
@@ -696,6 +710,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="cardiac-bioculture", amount=1}
             },
+            auto_recycle = false,
             energy_required = 3,
             allow_productivity = true,
             result_is_always_fresh = true,
@@ -723,6 +738,7 @@ if mods["space-age"] then
                 results = {
                     {type="item", name="vestibular-bioculture", amount=1}
                 },
+                auto_recycle = false,
                 energy_required = 3,
                 allow_productivity = true,
                 result_is_always_fresh = true,
@@ -803,6 +819,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="cardiac-bioculture", amount=1}
             },
+            auto_recycle = false,
             energy_required = 3,
             result_is_always_fresh = true,
             allow_quality = false,
@@ -843,6 +860,7 @@ if mods["space-age"] then
                 {type="item", name="copper-bacteria", amount=1, probability=0.1},
                 {type="item", name="nickel-bacteria", amount=1, probability=0.05},
             },
+            auto_recycle = false,
             energy_required = 5,
             allow_productivity = true,
             enabled = false,
@@ -878,6 +896,7 @@ if mods["space-age"] then
                 {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, probability=0.25},
                 {type="item", name="spoilage", amount=1}
             },
+            auto_recycle = false,
             energy_required = 3,
             result_is_always_fresh = true,
             allow_productivity = true,
@@ -914,6 +933,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="non-reversible-tremie-pipe", amount=1}
             },
+            auto_recycle = false,
             energy_required = 6,
             lasermill_dlc = {helium = -1, unlock="tissue-cultivation"},
             allow_productivity = true,
@@ -922,22 +942,21 @@ if mods["space-age"] then
         },
         {
             type = "recipe",
-            name = "custom-non-reversible-tremie-pipe-recycling",
+            name = "non-reversible-tremie-pipe-recycling",
             localised_name = {"recipe-name.recycling", {"item-name.non-reversible-tremie-pipe"}},
             icons = {
                     {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64,
-                        scale = 0.75
-                      },
-                      {
-                        icon = "__IfNickelMk2__/graphics/icons/non-reversible-tremie-pipe.png",
                         icon_size = 64
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__IfNickelMk2__/graphics/icons/non-reversible-tremie-pipe.png",
                         icon_size = 64,
-                        scale = 0.75
+                        scale = 0.33
+                      },
+                      {
+                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon_size = 64
                       }
             },
             category = "recycling",
@@ -959,22 +978,21 @@ if mods["space-age"] then
         },
         {
             type = "recipe",
-            name = "custom-epip-eimert-elbisrever-non-recycling",
-            localised_name = {"recipe-name.recycling", {"item-name.epip-eimert-elbisrever-non"}},
+            name = "epip-eimert-elbisrever-non-recycling",
+            localised_name = {"recipe-name.gnilcycer-epip-eimert-elbisrever-non"},
             icons = {
                     {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64,
-                        scale = 0.75
-                      },
-                      {
-                        icon = "__IfNickelMk2__/graphics/icons/epip-eimert-elbisrever-non.png",
                         icon_size = 64
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__IfNickelMk2__/graphics/icons/epip-eimert-elbisrever-non.png",
                         icon_size = 64,
-                        scale = 0.75
+                        scale = 0.33
+                      },
+                      {
+                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon_size = 64
                       }
             },
             category = "recycling",
@@ -984,8 +1002,8 @@ if mods["space-age"] then
             results = {
                 {type="item", name="non-reversible-tremie-pipe", amount=1}
             },
+            auto_recycle = false,
             hidden_in_factoriopedia = true,
-            bespoke = "epip-eimert-elbisrever-non",
             energy_required = 1,
             allow_quality = false,
             auto_recycle = false,
@@ -1010,6 +1028,7 @@ if mods["space-age"] and mods["bztitanium"] then
             results = {
                 {type="item", name="nitinol-precursor", amount=10}
             },
+            auto_recycle = false,
             energy_required = 1,
             allow_productivity = false,
             enabled = false
@@ -1105,6 +1124,7 @@ if mods["space-age"] and mods["castra"] then
             results = {
                 {type="item", name="ambifacient-lunar-waneshaft", amount=1}
             },
+            auto_recycle = false,
             energy_required = 2,
             allow_productivity = true,
             enabled = false

@@ -151,7 +151,7 @@ end
 
 if misc.difficulty > 1 and mods["LasingAroundMk2"] then
     motor_chance = motor_chance - 0.01
-    rm.AddProduct("custom-weird-alien-gizmo-recycling", {type="item", name="electric-motor", amount=1, probability=0.2})
+    rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="electric-motor", amount=1, probability=0.2})
 end
 
 --rocket engines exist
