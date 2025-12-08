@@ -40,6 +40,7 @@ data:extend({
         results = {
             {type="item", name="invar-precursor", amount=1}
         },
+        auto_recycle = false,
         energy_required = 0.5,
         enabled = false
     },
