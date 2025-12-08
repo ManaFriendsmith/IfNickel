@@ -927,7 +927,8 @@ if mods["space-age"] then
             icons = {
                     {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       },
                       {
                         icon = "__IfNickelMk2__/graphics/icons/non-reversible-tremie-pipe.png",
@@ -935,7 +936,8 @@ if mods["space-age"] then
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       }
             },
             category = "recycling",
@@ -962,7 +964,8 @@ if mods["space-age"] then
             icons = {
                     {
                         icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       },
                       {
                         icon = "__IfNickelMk2__/graphics/icons/epip-eimert-elbisrever-non.png",
@@ -970,7 +973,8 @@ if mods["space-age"] then
                       },
                       {
                         icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
+                        icon_size = 64,
+                        scale = 0.75
                       }
             },
             category = "recycling",
