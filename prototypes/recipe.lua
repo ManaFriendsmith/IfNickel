@@ -104,11 +104,11 @@ if mods["space-age"] then
             icon_size = 64,
             category = "centrifuging",
             ingredients = {
-                {type="item", name="invar-precursor", amount=1}
+                {type="item", name=mods["scrap-industry"] and "invar-scrap" or "invar-precursor", amount=1}
             },
             results = {
-                {type="item", name="iron-ore", amount=1, probability = 0.12},
-                {type="item", name="nickel-ore", amount=1, probability = 0.12}
+                {type="item", name=mods["scrap-industry"] and "iron-scrap" or "iron-ore", amount=1, probability = 0.12},
+                {type="item", name=mods["scrap-industry"] and "nickel-scrap" or "nickel-ore", amount=1, probability = 0.12}
             },
             subgroup = "fulgora-processes",
             auto_recycle = false,
