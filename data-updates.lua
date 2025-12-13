@@ -18,7 +18,7 @@ if mods["quality"] and misc.last_pf_mod == "IfNickelMk2" then
 
     local biggest_result_list = data.raw.furnace.recycler.result_inventory_size
     for k, v in pairs(data.raw.recipe) do
-      if v.type == "recycling" or v.type == "recycling-or-hand-crafting" then
+      if v.category == "recycling" or v.category == "recycling-or-hand-crafting" then
         if v.results and #v.results > biggest_result_list then
           biggest_result_list = #v.results
         end
