@@ -94,9 +94,41 @@ if mods["space-age"] then
     --data.raw.item["invar-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
     --data.raw.item["nickel-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
 
-    data.raw.recipe["invar-plate"].force_auto_recycle = true
-
+    data.raw.item["invar-plate"].auto_recycle = false
     data:extend({
+    {
+            type = "recipe",
+            name = "invar-plate-recycling",
+            localised_name = {"recipe-name.recycling", {"item-name.invar-plate"}},
+            icons = {
+                      {
+                        icon = "__quality__/graphics/icons/recycling.png",
+                        icon_size = 64
+                      },
+                      {
+                        icon = "__IfNickelMk2__/graphics/icons/invar-plate.png",
+                        icon_size = 64,
+                        scale = 0.37
+                      },
+                      {
+                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon_size = 64
+                      }
+            },
+            category = "recycling",
+            ingredients = {
+                {type="item", name="invar-plate", amount=1}
+            },
+            results = {
+                {type="item", name=mods["scrap-industry"] and "invar-scrap" or "invar-precursor", amount=1, probability = 0.25}
+            },
+            energy_required = 0.4,
+            allow_productivity = false,
+            enabled = true,
+            hidden = true,
+            allow_decomposition = false,
+            unlock_results = false
+        },
         {
             type = "recipe",
             name = "invar-separation",
@@ -605,6 +637,7 @@ if mods["LunarLandings"] then
 end
 
 if mods["space-age"] then
+    data.raw.item["invar-plate"].auto_recycle = false
     data:extend({
         {
             type = "recipe",
