@@ -320,6 +320,32 @@ if mods["space-age"] then
             }
         })
     end
+
+    if mods["planet-muluna"] and not mods["BrassTacksMk2"] then
+        data:extend({
+            {
+                type = "recipe",
+                name = "asteroid-crushing-for-nickel",
+                icon = "__pf-sa-compat__/graphics/icons/advanced-ferrous-asteroid-crushing.png",
+                icon_size = 64,
+                subgroup = "space-crushing",
+                order = "b-a-a-a",
+                category = "crushing",
+                ingredients = {
+                    {type="item", name="metallic-asteroid-chunk", amount=1},
+                },
+                results = {
+                    {type="item", name="nickel-ore", amount=5},
+                    {type="item", name="metallic-asteroid-chunk", amount=1, probability=0.05}
+                },
+                energy_required = 5,
+                auto_recycle = false,
+                allow_productivity = true,
+                allow_decomposition = false,
+                enabled = false
+            }
+        })
+    end
 end
 
 if tune_up_data then

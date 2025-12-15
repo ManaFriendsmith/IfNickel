@@ -241,6 +241,48 @@ if misc.difficulty > 1 and mods["space-age"] then
             },
             max_level = "infinite",
             upgrade = true
+        },
+        {
+            type = "technology",
+            name = "gimbaled-rocket-engine-productivity",
+            icons = {
+                {
+                    icon = "__IfNickelMk2__/graphics/technology/gimbaled-rocket-engine.png",
+                    icon_size = 256
+                },
+                {
+                    icon = "__core__/graphics/icons/technology/constants/constant-mining-productivity.png",
+                    icon_size = 128,
+                    scale = 0.5,
+                    shift = {50, 50}
+                }
+                },
+            effects =
+            {
+                {
+                type = "change-recipe-productivity",
+                recipe = "gimbaled-rocket-engine",
+                change = 0.1
+                }
+            },
+            prerequisites = {"cryogenic-science-pack"},
+            unit =
+            {
+                count_formula = "1.5^L*1000",
+                ingredients =
+                {
+                    {"automation-science-pack", 1},
+                    {"logistic-science-pack", 1},
+                    {"military-science-pack", 1},
+                    {"chemical-science-pack", 1},
+                    {"production-science-pack", 1},
+                    {"space-science-pack", 1},
+                    {"cryogenic-science-pack", 1}
+                },
+                time = 60
+            },
+            max_level = "infinite",
+            upgrade = true
         }
     })
 

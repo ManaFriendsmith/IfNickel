@@ -166,3 +166,36 @@ if mods["castra"] then
         tm.AddSciencePack("bioculture-productivity-6", "battlefield-science-pack")
     end
 end
+
+if mods["planet-muluna"] then
+    if misc.difficulty > 1 then
+        rm.AddIngredient("electric-engine-unit-from-carbon", "electromagnetic-coil", 10)
+    else
+        rm.AddIngredient("electric-engine-unit-from-carbon", "nickel-plate", 6)
+    end
+
+    if misc.difficulty == 3 then
+        rm.ReplaceIngredientProportional("muluna-vacuum-heating-tower", "pipe", "non-reversible-tremie-pipe", 0.25)
+        rm.AddIngredient("casting-low-density-structure-aluminum", "invar-plate", 2)
+    else
+        rm.ReplaceIngredientProportional("casting-low-density-structure-aluminum", "molten-iron", "invar-plate", 1/40)
+    end
+
+    if data.raw.item["nitinol-plate"] then
+        rm.ReplaceIngredientProportional("muluna-cycling-steam-turbine", "pipe", "self-regulating-valve")
+    else
+        rm.ReplaceIngredientProportional("muluna-cycling-steam-turbine", "pipe", "high-pressure-valve")
+    end
+
+    if mods["BrassTacksMk2"] then
+        tm.RemoveUnlock("advanced-asteroid-processing", "advanced-metallic-asteroid-crushing")
+        tm.AddUnlock("metallic-asteroid-crushing", "advanced-metallic-asteroid-crushing")
+    else
+        tm.AddUnlock("metallic-asteroid-crushing", "asteroid-crushing-for-nickel")
+        tm.AddUnlock("asteroid-productivity", {type="change-recipe-productivity", recipe="asteroid-crushing-for-nickel", change=0.1})
+    end
+
+    if misc.difficulty > 1 then
+        tm.AddSciencePack("bioculture-productivity-6", "interstellar-science-pack")
+    end
+end
