@@ -66,10 +66,6 @@ if mods["maraxsis"] then
         rm.AddIngredient("maraxsis-empty-research-vessel", "high-pressure-valve", 3)
     end
 
-    if misc.difficulty > 1 then
-        tm.AddSciencePack("bioculture-productivity-6", "hydraulic-science-pack")
-    end
-
     rm.AddRecipeCategory("high-pressure-valve", "maraxsis-hydro-plant")
     rm.AddRecipeCategory("fluid-regulator", "maraxsis-hydro-plant")
     rm.AddRecipeCategory("gimbaled-rocket-engine", "maraxsis-hydro-plant")
@@ -124,10 +120,6 @@ if mods["Paracelsin"] then
 
     rm.AddProduct("tetrahedrite-processing", "nickel-ore")
     rm.RemoveProduct("tetrahedrite-processing", "zinc-ore")
-
-    if misc.difficulty > 1 then
-        tm.AddSciencePack("bioculture-productivity-6", "galvanization-science-pack")
-    end
 end
 
 if mods["castra"] then
@@ -161,15 +153,13 @@ if mods["castra"] then
         rm.ReplaceIngredientProportional("engine-unit-gunpowder", "pipe", "high-pressure-valve", 0.5)
     end
     rm.AddIngredient("battery-nickel", "nickel-plate", 1)
-
-    if misc.difficulty > 1 then
-        tm.AddSciencePack("bioculture-productivity-6", "battlefield-science-pack")
-    end
 end
 
 if mods["planet-muluna"] then
     if misc.difficulty > 1 then
         rm.AddIngredient("electric-engine-unit-from-carbon", "electromagnetic-coil", 10)
+        tm.AddPrerequisite("gimbaled-rocket-engine-productivity", "interstellar-science-pack")
+        tm.AddSciencePack("gimbaled-rocket-engine-productivity", "interstellar-science-pack")
     else
         rm.AddIngredient("electric-engine-unit-from-carbon", "nickel-plate", 6)
     end
@@ -194,8 +184,17 @@ if mods["planet-muluna"] then
         tm.AddUnlock("metallic-asteroid-crushing", "asteroid-crushing-for-nickel")
         tm.AddUnlock("asteroid-productivity", {type="change-recipe-productivity", recipe="asteroid-crushing-for-nickel", change=0.1})
     end
+end
 
+if mods["Cerys-Moon-of-Fulgora"] then
+    tm.AddUnlock("cerys-nuclear-scrap-recycling", "invar-separation")
     if misc.difficulty > 1 then
-        tm.AddSciencePack("bioculture-productivity-6", "interstellar-science-pack")
+        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="fluid-regulator", amount=1, probability=0.01})
+    else
+        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="high-pressure-valve", amount=1, probability=0.01})
+    end
+
+    if misc.difficulty == 3 then
+        rm.AddIngredient("cerys-processing-units-from-nitric-acid", "cooling-fan", 1)
     end
 end
