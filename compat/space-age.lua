@@ -221,7 +221,7 @@ if misc.difficulty == 3 then
         rm.ReplaceIngredientProportional("hydrocoptic-marzelvane", "pipe", "fluid-regulator", 0.3)
     end
 
-    rm.MultiplyRecipe("fluoroketone-cooling", 10)
+    rm.MultiplyRecipe("fluoroketone-cooling", 50)
     rm.AddIngredient("fluoroketone-cooling", "cooling-fan", 1)
 end
 
