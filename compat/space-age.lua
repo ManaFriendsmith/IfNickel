@@ -218,7 +218,7 @@ if misc.difficulty == 3 then
     rm.AddIngredient("cryogenic-plant", "non-reversible-tremie-pipe", 10)
 
     if mods["ThemTharHillsMk2"] then
-        rm.ReplaceIngredientProportional("hydrocoptic-marzelvane", "pipe", "fluid-regulator", 0.3)
+        rm.ReplaceIngredientProportional("hydrocoptic-marzelvane", "pipe", "fluid-regulator", 0.5)
     end
 
     rm.MultiplyRecipe("fluoroketone-cooling", 50)
