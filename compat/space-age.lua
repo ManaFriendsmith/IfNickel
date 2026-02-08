@@ -215,6 +215,13 @@ if misc.difficulty == 3 then
     tm.AddPrerequisite("cryogenic-science-pack", "tissue-cultivation")
     rm.AddIngredient("cryogenic-science-pack", "cardiac-bioculture")
 
+    --allow re-insertion of hearts for freshening
+    for k, v in pairs(data.raw["cargo-landing-pad"]["cargo-landing-pad"].flags) do
+        if v == "no-automated-item-insertion" then
+            table.remove(data.raw["cargo-landing-pad"]["cargo-landing-pad"].flags, k)
+        end
+    end
+
     rm.AddIngredient("cryogenic-plant", "non-reversible-tremie-pipe", 10)
 
     if mods["ThemTharHillsMk2"] then
