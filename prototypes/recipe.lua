@@ -1025,10 +1025,8 @@ if mods["space-age"] then
             results = {
                 {type="item", name="epip-eimert-elbisrever-non", amount=1}
             },
-            hidden_in_factoriopedia = true,
             bespoke = "non-reversible-tremie-pipe",
             energy_required = 1,
-            allow_quality = false,
             auto_recycle = false,
             enabled = true,
             hidden = true,
@@ -1037,41 +1035,30 @@ if mods["space-age"] then
         },
         {
             type = "recipe",
-            name = "epip-eimert-elbisrever-non-recycling",
-            localised_name = {"recipe-name.gnilcycer-epip-eimert-elbisrever-non"},
-            icons = {
-                    {
-                        icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
-                      },
-                      {
-                        icon = "__IfNickelMk2__/graphics/icons/epip-eimert-elbisrever-non.png",
-                        icon_size = 64,
-                        scale = 0.33
-                      },
-                      {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
-                      }
-            },
-            category = "recycling",
+            name = "double-half-rotation",
+            category = mods["LasingAroundMk2"] and "conceptual-inversion" or "organic",
+            icon = "__IfNickelMk2__/graphics/icons/double-half-rotation.png",
+            icon_size = 64,
+            order = "c[advanced-intermediates]-2a3",
             ingredients = {
-                {type="item", name="epip-eimert-elbisrever-non", amount=1}
+                {type="item", name="epip-eimert-elbisrever-non", amount=2},
+                {type="item", name=mods["LasingAroundMk2"] and "perpendicular-processor" or "electric-motor", amount=mods["LasingAroundMk2"] and 1 or 6}
             },
             results = {
                 {type="item", name="non-reversible-tremie-pipe", amount=1}
             },
+            maximum_productivity = 0,
             auto_recycle = false,
-            hidden_in_factoriopedia = true,
-            energy_required = 1,
-            allow_quality = false,
+            energy_required = 4,
+            allow_productivity = false,
             auto_recycle = false,
-            enabled = true,
-            hidden = true,
-            allow_decomposition = false,
-            unlock_results = false
+            enabled = false,
         }
     })
+
+    if not mods["LasingAroundMk2"] then
+        data.raw.recipe["double-half-rotation"].localised_description = {"recipe-description.hint-no-biochamber-prod"}
+    end
 end
 
 if mods["space-age"] and mods["bztitanium"] then

@@ -237,6 +237,41 @@ if misc.difficulty > 1 and mods["space-age"] then
     end
 
     if misc.difficulty == 3 then
+        data:extend({
+            {
+                type = "technology",
+                name = "double-half-rotation",
+                icon = "__IfNickelMk2__/graphics/technology/double-half-rotation.png",
+                icon_size = 256,
+                effects = {
+                    {
+                        type = "unlock-recipe",
+                        recipe = "double-half-rotation"
+                    }
+                },
+                prerequisites = {"promethium-science-pack"},
+                unit = {
+                    count = 10000,
+                    time = 30,
+                    ingredients = {
+                        {"automation-science-pack", 1},
+                        {"logistic-science-pack", 1},
+                        {"military-science-pack", 1},
+                        {"chemical-science-pack", 1},
+                        {"production-science-pack", 1},
+                        {"utility-science-pack", 1},
+                        {"space-science-pack", 1},
+                        {"metallurgic-science-pack", 1},
+                        {"electromagnetic-science-pack", 1},
+                        {"agricultural-science-pack", 1},
+                        {"cryogenic-science-pack", 1},
+                        {"promethium-science-pack", 1},
+                    }
+                }
+            }
+        })
+        tm.AddSciencePacks("double-half-rotation", tm.post_promethium_sciences)
+
         tm.AddUnlock("tissue-cultivation", "non-reversible-tremie-pipe")
         tm.AddUnlock("tissue-cultivation", "bacterium-extraction-from-sludge")
         tm.AddUnlock("tissue-cultivation", "mutagenic-sludge-quelling")

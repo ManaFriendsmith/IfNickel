@@ -470,6 +470,8 @@ if mods["space-age"] then
       type = "item",
       name = "epip-eimert-elbisrever-non",
       icon = "__IfNickelMk2__/graphics/icons/epip-eimert-elbisrever-non.png",
+      subgroup = "intermediate-product",
+      order = "c[advanced-intermediates]-2a3",
       inventory_move_sound = item_sounds.fluid_inventory_move,
       pick_sound = item_sounds.fluid_inventory_pickup,
       drop_sound = item_sounds.fluid_inventory_move,
@@ -478,8 +480,6 @@ if mods["space-age"] then
       weight = 10*kg,
       spoil_ticks = 20 * 60,
       auto_recycle = false,
-      hidden_in_factoriopedia = true,
-      hidden = true,
       spoil_to_trigger_result =
       {
         items_per_trigger = 1,
