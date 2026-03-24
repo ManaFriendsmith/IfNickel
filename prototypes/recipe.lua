@@ -346,6 +346,30 @@ if mods["space-age"] then
             }
         })
     end
+
+    if mods["Moshine"] then
+        local motor_new = table.deepcopy(data.raw.recipe["electric-motor"])
+        motor_new.name = "neodymium-motor"
+        rm.MultiplyRecipe(motor_new, {input=2, time=2, output=4})
+        rm.AddIngredient(motor_new, "magnet", 1)
+        motor_new.localised_name = {"recipe-name.neodymium-motor"}
+        motor_new.auto_recycle = false
+        motor_new.category = "electromagnetics"
+        motor_new.icons = {
+            {
+                icon = "__IfNickelMk2__/graphics/icons/electric-motor.png",
+                icon_size = 64
+            },
+            {
+                icon = "__Moshine__/graphics/icons/magnet.png",
+                icon_size = 64,
+                scale = 0.25,
+                shift = {8, -8}
+            }
+        }
+        motor_new.lasermill_dlc = nil
+        data:extend({motor_new})
+    end
 end
 
 if tune_up_data then

@@ -198,3 +198,23 @@ if mods["Cerys-Moon-of-Fulgora"] then
         rm.AddIngredient("cerys-processing-units-from-nitric-acid", "cooling-fan", 1)
     end
 end
+
+if mods["Moshine"] then
+    table.insert(data.raw["resource"]["multi-ore"].minable.results, {type="item", name="nickel-ore", amount=1, probability=0.03})
+
+    if misc.difficulty == 3 then
+        rm.AddIngredient("data-processor", "cooling-fan", 20)
+        rm.AddIngredient("webbed_processor_tile", "cooling-fan", 1)
+    end
+
+    if misc.difficulty > 1 then
+        data.raw.item["magnet"].localised_name = {"item-name.permanent-magnet"}
+    end
+
+    --make it viable to produce neodymium motors on other planets
+    --unlike laser mill it's not fully reversible but grants access to +1 module slot via the EM plant
+    data.raw.item["neodymium"].weight = 2 * kg
+    data.raw.item["magnet"].weight = 1 * kg
+
+    tm.AddUnlock("moshine-tech-magnet", "neodymium-motor")
+end
