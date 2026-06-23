@@ -59,7 +59,7 @@ data:extend({
         hide_from_player_crafting = true,
         subgroup = "production-scrap",
         order = "b[smelting]-ea[nickel]",
-        category = "smelting",
+        categories={"smelting"},
         energy_required = 3.2,
         allow_productivity = true,
         enabled = true,
@@ -88,7 +88,7 @@ data:extend({
         hide_from_player_crafting = true,
         subgroup = "production-scrap",
         order = "b[smelting]-eb[invar]",
-        category = "smelting",
+        categories={"smelting"},
         energy_required = 6.4,
         allow_productivity = true,
         enabled = true,
@@ -121,7 +121,7 @@ if mods["space-age"] then
             hide_from_player_crafting = true,
             subgroup = "production-scrap",
             order = "e[melting]-ea[molten-nickel]",
-            category = "metallurgy",
+            categories={"metallurgy"},
             energy_required = 64,
             allow_productivity = true,
             enabled = false,
@@ -158,7 +158,7 @@ if mods["space-age"] then
             hide_from_player_crafting = true,
             subgroup = "production-scrap",
             order = "e[melting]-eb[molten-invar]",
-            category = "metallurgy",
+            categories={"metallurgy"},
             energy_required = 64,
             allow_productivity = true,
             enabled = false,
@@ -209,7 +209,7 @@ if mods["space-age"] then
                 hide_from_player_crafting = true,
                 subgroup = "production-scrap",
                 order = "b[smelting]-ec[nitinol]",
-                category = "smelting",
+                categories={"smelting"},
                 energy_required = 8,
                 allow_productivity = true,
                 enabled = true,
@@ -238,7 +238,7 @@ if mods["space-age"] then
                 hide_from_player_crafting = true,
                 subgroup = "production-scrap",
                 order = "e[melting]-ed[nitinol]",
-                category = "metallurgy",
+                categories={"metallurgy"},
                 energy_required = 3.2,
                 allow_productivity = true,
                 surface_conditions = {
@@ -303,7 +303,7 @@ if settings.startup["scrap-industry-mech"].value then
             hide_from_player_crafting = true,
             subgroup = "intermediate-product",
             order = "a[basic-intermediate]-b[copper-cable]-a[scrap]",
-            category = "crafting",
+            categories={"crafting"},
             energy_required = 4,
             allow_productivity = true,
             enabled = true,
@@ -311,16 +311,16 @@ if settings.startup["scrap-industry-mech"].value then
                 {type="item", name="motor-scrap", amount=4}
             },
             results = {
-                {type="item", name="copper-cable", amount=1, probability=0.5},
+                {type="item", name="copper-cable", amount=1, independent_probability=0.5},
                 {type="item", name="mech-scrap", amount=1},
                 {type="item", name="nickel-scrap", amount_min=1, amount_max=3}
             }
         }
     })
     if misc.difficulty == 3 then
-        rm.AddProduct("sort-motor-scrap", {type="item", name="electromagnetic-coil", amount=1, probability=0.5})
+        rm.AddProduct("sort-motor-scrap", {type="item", name="electromagnetic-coil", amount=1, independent_probability=0.5})
     else
-        rm.AddProduct("sort-motor-scrap", {type="item", name="circuit-scrap", amount=1, probability=0.5})
+        rm.AddProduct("sort-motor-scrap", {type="item", name="circuit-scrap", amount=1, independent_probability=0.5})
     end
 else
     data:extend({
@@ -340,7 +340,7 @@ else
                 }
             },
             hide_from_player_crafting = true,
-            category = mods["space-age"] and "electronics" or "crafting",
+            categories = mods["space-age"] and {"crafting", "electromagnetics"} or {"crafting"},
             energy_required = 2.5,
             allow_productivity = true,
             enabled = false,

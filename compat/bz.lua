@@ -36,7 +36,7 @@ if mods["bztin"] then
 
     if data.raw.item["bronze-plate"] and misc.difficulty > 1 and not data.raw.item["spring"] then
         rm.AddIngredient("motorized-arm", "bronze-plate", 2)
-        if mods["quality"] then
+        if mods["recycler"] then
             rm.RemoveIngredient("recycler", "bronze-plate", 99999)
         end
     end

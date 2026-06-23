@@ -18,7 +18,7 @@ data:extend({
     {
         type = "recipe",
         name = "nickel-plate",
-        category = "smelting",
+        categories={"smelting"},
         ingredients = {
             {type="item", name="nickel-ore", amount=1}
         },
@@ -32,7 +32,7 @@ data:extend({
     {
         type = "recipe",
         name = "invar-precursor",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = {
             {type="item", name="nickel-plate", amount=2},
             {type="item", name="iron-plate", amount=2}
@@ -47,7 +47,7 @@ data:extend({
     {
         type = "recipe",
         name = "invar-plate",
-        category = "smelting",
+        categories={"smelting"},
         ingredients = {
             {type="item", name="invar-precursor", amount=1}
         },
@@ -61,7 +61,7 @@ data:extend({
     {
         type = "recipe",
         name = "electric-motor",
-        category = mods["space-age"] and "electronics" or "crafting",
+        categories = mods["space-age"] and {"crafting", "electromagnetics"} or {"crafting"},
         ingredients = motor_ingredients,
         results = {
             {type="item", name="electric-motor", amount=1}
@@ -74,7 +74,7 @@ data:extend({
     {
         type = "recipe",
         name = "high-pressure-valve",
-        category = "advanced-crafting",
+        categories={"advanced-crafting"},
         ingredients = {
             {type="item", name="invar-plate", amount=1},
             {type="item", name="pipe", amount=2},
@@ -102,7 +102,7 @@ if mods["space-age"] then
             localised_name = {"recipe-name.recycling", {"item-name.invar-plate"}},
             icons = {
                       {
-                        icon = "__quality__/graphics/icons/recycling.png",
+                        icon = "__recycler__/graphics/icons/recycling.png",
                         icon_size = 64
                       },
                       {
@@ -111,16 +111,16 @@ if mods["space-age"] then
                         scale = 0.37
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__recycler__/graphics/icons/recycling-top.png",
                         icon_size = 64
                       }
             },
-            category = "recycling",
+            categories={"recycling"},
             ingredients = {
                 {type="item", name="invar-plate", amount=1}
             },
             results = {
-                {type="item", name=mods["scrap-industry"] and "invar-scrap" or "invar-precursor", amount=1, probability = 0.25}
+                {type="item", name=mods["scrap-industry"] and "invar-scrap" or "invar-precursor", amount=1, independent_probability = 0.25}
             },
             energy_required = 0.4,
             allow_productivity = false,
@@ -134,13 +134,13 @@ if mods["space-age"] then
             name = "invar-separation",
             icon = "__IfNickelMk2__/graphics/icons/invar-separation.png",
             icon_size = 64,
-            category = "centrifuging",
+            categories={"centrifuging"},
             ingredients = {
                 {type="item", name=mods["scrap-industry"] and "invar-scrap" or "invar-precursor", amount=1}
             },
             results = {
-                {type="item", name=mods["scrap-industry"] and "iron-scrap" or "iron-ore", amount=1, probability = 0.12},
-                {type="item", name=mods["scrap-industry"] and "nickel-scrap" or "nickel-ore", amount=1, probability = 0.12}
+                {type="item", name=mods["scrap-industry"] and "iron-scrap" or "iron-ore", amount=1, independent_probability = 0.12},
+                {type="item", name=mods["scrap-industry"] and "nickel-scrap" or "nickel-ore", amount=1, independent_probability = 0.12}
             },
             subgroup = "fulgora-processes",
             auto_recycle = false,
@@ -154,13 +154,13 @@ if mods["space-age"] then
         },
         {
             type = "recipe",
-            name = "molten-nickel",
+            name = "nickel-ore-melting",
             icon = "__pf-sa-compat__/graphics/icons/nickel-ore-melting.png",
             icon_size = 64,
             icon_mipmaps = 4,
             subgroup = "vulcanus-processes",
             order = "a[melting]-d",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="item", name="nickel-ore", amount=50},
                 {type="item", name="calcite", amount=1}
@@ -181,7 +181,7 @@ if mods["space-age"] then
             icon_mipmaps = 4,
             subgroup = "vulcanus-processes",
             order = "a[melting]-a[lava-b]",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="lava", amount=500, fluidbox_multiplier=10},
                 {type="item", name="calcite", amount=1}
@@ -202,7 +202,7 @@ if mods["space-age"] then
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-bc",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="molten-nickel", amount=20, fluidbox_multiplier=10},
             },
@@ -221,7 +221,7 @@ if mods["space-age"] then
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-bd",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="molten-iron", amount=12, fluidbox_multiplier=10},
                 {type="fluid", name="molten-nickel", amount=12, fluidbox_multiplier=10},
@@ -242,7 +242,7 @@ if mods["space-age"] then
             icon_mipmaps = 4,
             subgroup = "vulcanus-processes",
             order = "a[melting]-a0",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="fluid", name="sulfuric-acid", amount=200, fluidbox_multiplier=10},
                 {type="item", name="malachite", amount=50},
@@ -265,18 +265,17 @@ if mods["space-age"] then
             icon_mipmaps = 4,
             subgroup = "agriculture-processes",
             order = "e[bacteria]-a[bacteria]-d",
-            category = "organic",
+            categories={"organic"},
             ingredients = {
                 {type="item", name=mods["BrassTacksMk2"] and "iron-bacteria" or "copper-bacteria", amount=3},
                 {type="item", name="philosophers-hormone", amount=1},
             },
             results = {
-                {type="item", name="nickel-bacteria", amount=3}
+                {type="item", name="nickel-bacteria", amount=3, always_fresh=true}
             },
             energy_required = 2,
             auto_recycle = false,
             allow_productivity = true,
-            result_is_always_fresh = true,
             enabled = false,
             crafting_machine_tint =
             {
@@ -305,7 +304,7 @@ if mods["space-age"] then
                 },
                 subgroup = "raw-material",
                 order = "n",
-                category = "synthesis",
+                categories={"synthesis"},
                 ingredients = {
                     {type="item", name="carbon", amount=5},
                     {type="fluid", name="ammoniacal-solution", amount=100},
@@ -330,13 +329,13 @@ if mods["space-age"] then
                 icon_size = 64,
                 subgroup = "space-crushing",
                 order = "b-a-a-a",
-                category = "crushing",
+                categories={"crushing"},
                 ingredients = {
                     {type="item", name="metallic-asteroid-chunk", amount=1},
                 },
                 results = {
                     {type="item", name="nickel-ore", amount=5},
-                    {type="item", name="metallic-asteroid-chunk", amount=1, probability=0.05}
+                    {type="item", name="metallic-asteroid-chunk", amount=1, independent_probability=0.05}
                 },
                 energy_required = 5,
                 auto_recycle = false,
@@ -354,7 +353,7 @@ if mods["space-age"] then
         rm.AddIngredient(motor_new, "magnet", 1)
         motor_new.localised_name = {"recipe-name.neodymium-motor"}
         motor_new.auto_recycle = false
-        motor_new.category = "electromagnetics"
+        motor_new.categories={"electromagnetics"}
         motor_new.icons = {
             {
                 icon = "__IfNickelMk2__/graphics/icons/electric-motor.png",
@@ -375,7 +374,7 @@ end
 if tune_up_data then
   if not mods["space-age"] then
     tune_up_data.recipes["nickel-ore"] = {
-        category = "purification",
+        categories={"purification"},
         count = 5,
         energy_required = 1,
         ingredients = {{{"nickel-ore", 5}, {"stone", 1}, {"sulfuric-acid", 25}}}
@@ -383,7 +382,7 @@ if tune_up_data then
   end
 
   tune_up_data.recipes["nickel-bacteria"] = {
-    category = "purification",
+    categories={"purification"},
     count = 4,
     energy_required = 2,
     result_is_always_fresh = true,
@@ -391,77 +390,77 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["malachite"] = {
-      category = "purification",
+      categories={"purification"},
       count = 10,
       energy_required = 1,
       ingredients = {{{"copper-ore", 5}, {"sulfur", 1}, {"sulfuric-acid", 25}}}
   }
 
   tune_up_data.recipes["nickel-plate"] = {
-    category = "purification",
+    categories={"purification"},
     count = 10,
     energy_required = 10,
     ingredients = {{{"nickel-plate", 5}, {"sulfuric-acid", 50}, {"calcite", 1}}, {{"stone", 1}, {"nickel-ore", 5}}}
   }
 
   tune_up_data.recipes["invar-plate"] = {
-    category = "purification",
+    categories={"purification"},
     count = 10,
     energy_required = 10,
     ingredients = {{{"invar-plate", 5}, {"sulfuric-acid", 50}, {"calcite", 1}}, {{"stone", 1}, {"nickel-ore", 10}, {"iron-ore", 10}}}
   }
 
   tune_up_data.recipes["electric-motor"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 2,
     energy_required = 2,
     ingredients = {{{"electromagnetic-coil", misc.difficulty * 3}}, {{"electronic-circuit", 2}}}
   }
 
   tune_up_data.recipes["high-pressure-valve"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 2,
     ingredients = {{{"invar-plate", 1}, {"galvanized-tubing", 1}}, {{"invar-plate", 1}, {"pipe", 1}}}
   }
 
   tune_up_data.recipes["cooling-fan"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 1,
-    ingredients = {{{"malleable-logarithmic-casing", 1}}, {{"iron-stick", 3}}}
+    ingredients = {{{"malleable-logarithmic-casing", 1}, {"plastic-bar", 1}}, {{"plastic-bar", 2}, {"gold-wire", 2}}, {{"plastic-bar", 2}, {"copper-wire", 2}}}
   }
 
   tune_up_data.recipes["electromagnetic-coil"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 2,
     energy_required = 1,
     ingredients = {{{"nickel-plate", 1}, {"gold-wire", 1}}, {{"nickel-plate", 1}, {"tinned-cable", 1}}, {{"nickel-plate", 1}}}
   }
 
   tune_up_data.recipes["fluid-regulator"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 2,
     energy_required = 1,
     ingredients = {{{"galvanized-tubing", 2}, {"stepper-motor", 1}}, {{"pipe", 2}, {"stepper-motor", 1}}, {{"galvanized-tubing", 2}, {"advanced-circuit", 1}}, {{"pipe", 2}, {"advanced-circuit", 1}}}
   }
 
   tune_up_data.recipes["motorized-arm"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 1,
-    ingredients = {{{"stepper-motor", 1}}, {{"advanced-circuit", 1}}}
+    ingredients = {{{"stepper-motor", 2}}, {{"advanced-circuit", 2}}}
   }
 
   tune_up_data.recipes["gimbaled-rocket-engine"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 1,
     ingredients = {{{"high-pressure-valve", 2}, {"nitinol-plate", 1}}, {{"high-pressure-valve", 2}}}
   }
 
   tune_up_data.recipes["stem-cells"] = {
-    category = "purification",
+    categories={"purification"},
     count = 3,
     energy_required = 1,
     result_is_always_fresh = true,
@@ -469,7 +468,7 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["skeletal-bioculture"] = {
-    category = "purification",
+    categories={"purification"},
     count = 40,
     energy_required = 20,
     result_is_always_fresh = true,
@@ -477,7 +476,7 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["musculoskeletal-bioculture"] = {
-    category = "purification",
+    categories={"purification"},
     count = 3,
     energy_required = 1,
     result_is_always_fresh = true,
@@ -485,7 +484,7 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["vascular-bioculture"] = {
-    category = "purification",
+    categories={"purification"},
     count = 5,
     energy_required = 1,
     result_is_always_fresh = true,
@@ -493,7 +492,7 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["cardiac-bioculture"] = {
-    category = "purification",
+    categories={"purification"},
     count = 5,
     energy_required = 1,
     result_is_always_fresh = true,
@@ -501,7 +500,7 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["vestibular-bioculture"] = {
-    category = "purification",
+    categories={"purification"},
     count = 5,
     energy_required = 1,
     result_is_always_fresh = true,
@@ -509,7 +508,7 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["ambifacient-lunar-waneshaft"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 3,
     result_is_always_fresh = true,
@@ -517,7 +516,7 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["grabber"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 3,
     result_is_always_fresh = true,
@@ -525,7 +524,7 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["nitinol-plate"] = {
-    category = "purification",
+    categories={"purification"},
     count = 8,
     energy_required = 10,
     result_is_always_fresh = true,
@@ -533,7 +532,7 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["self-regulating-valve"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 8,
     energy_required = 10,
     result_is_always_fresh = true,
@@ -541,7 +540,7 @@ if tune_up_data then
   }
 
   tune_up_data.recipes["non-reversible-tremie-pipe"] = {
-    category = "tuning-up",
+    categories={"tuning-up"},
     count = 1,
     energy_required = 4,
     result_is_always_fresh = true,
@@ -556,7 +555,7 @@ if misc.difficulty == 3 or not mods["space-age"] then
         {
             type = "recipe",
             name = "cooling-fan",
-            category = "crafting",
+            categories={"crafting"},
             ingredients = {
                 {type="item", name="plastic-bar", amount=4},
                 {type="item", name="electric-motor", amount=1}
@@ -576,7 +575,7 @@ data:extend({
     {
         type = "recipe",
         name = "electromagnetic-coil",
-        category = mods["space-age"] and "electronics" or "crafting",
+        categories = mods["space-age"] and {"crafting", "electromagnetics"} or {"crafting"},
         ingredients = {
             {type="item", name="nickel-plate", amount=1},
             {type="item", name="copper-cable", amount=1},
@@ -592,7 +591,7 @@ data:extend({
     {
         type = "recipe",
         name = "fluid-regulator",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = {
             {type="item", name="high-pressure-valve", amount=1},
             {type="item", name="electric-motor", amount=1},
@@ -609,7 +608,7 @@ data:extend({
     {
         type = "recipe",
         name = "motorized-arm",
-        category = mods["RoboticsFacility"] and "robotics" or "crafting",
+        categories = mods["RoboticsFacility"] and {"robotics"} or {"crafting"},
         ingredients = {
             {type="item", name="iron-stick", amount=6},
             {type="item", name="electric-motor", amount=2},
@@ -626,7 +625,7 @@ data:extend({
     {
         type = "recipe",
         name = "gimbaled-rocket-engine",
-        category = "advanced-crafting",
+        categories={"advanced-crafting"},
         ingredients = {
             {type="item", name="high-pressure-valve", amount=2},
             {type="item", name="motorized-arm", amount=1},
@@ -648,7 +647,7 @@ if mods["LunarLandings"] then
         {
             type = "recipe",
             name = "pack-gimbaled-rocket-engine",
-            category = "crafting",
+            categories={"crafting"},
             icon = "__IfNickelMk2__/graphics/icons/gimbaled-rocket-engine-packed.png",
             subgroup = "ll-packed-rocket-ingredients",
             order = "x",
@@ -667,7 +666,7 @@ if mods["LunarLandings"] then
         {
             type = "recipe",
             name = "unpack-gimbaled-rocket-engine",
-            category = "crafting",
+            categories={"crafting"},
             icon = "__IfNickelMk2__/graphics/icons/gimbaled-rocket-engine-packed.png",
             subgroup = "ll-packed-rocket-ingredients",
             order = "y",
@@ -692,17 +691,16 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "stem-cells",
-            category = "organic",
+            categories={"organic"},
             ingredients = {
                 {type="item", name="pentapod-egg", amount=1}
             },
             results = {
-                {type="item", name="stem-cells", amount=6}
+                {type="item", name="stem-cells", amount=6, always_fresh=true}
             },
             auto_recycle = false,
             energy_required = 2,
             allow_productivity = true,
-            result_is_always_fresh = true,
             enabled = false,
             crafting_machine_tint =
             {
@@ -713,19 +711,18 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "skeletal-bioculture",
-            category = "organic",
+            categories={"organic"},
             ingredients = {
                 {type="item", name="stem-cells", amount=1},
                 {type="item", name="iron-bacteria", amount=1},
                 {type="item", name="philosophers-hormone", amount=1},
             },
             results = {
-                {type="item", name="skeletal-bioculture", amount=mods["BrassTacksMk2"] and 3 or 8}
+                {type="item", name="skeletal-bioculture", amount=mods["BrassTacksMk2"] and 3 or 8, always_fresh=true}
             },
             auto_recycle = false,
             energy_required = 3,
             allow_productivity = true,
-            result_is_always_fresh = true,
             enabled = false,
             crafting_machine_tint =
             {
@@ -736,7 +733,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "musculoskeletal-bioculture",
-            category = "organic",
+            categories={"organic"},
             ingredients = {
                 {type="item", name="stem-cells", amount=1},
                 {type="item", name="nickel-bacteria", amount=1},
@@ -744,12 +741,11 @@ if mods["space-age"] then
                 {type="item", name="skeletal-bioculture", amount=mods["BrassTacksMk2"] and 1 or 2},
             },
             results = {
-                {type="item", name="musculoskeletal-bioculture", amount=1}
+                {type="item", name="musculoskeletal-bioculture", amount=1, always_fresh=true}
             },
             auto_recycle = false,
             energy_required = 3,
             allow_productivity = true,
-            result_is_always_fresh = true,
             enabled = false,
             crafting_machine_tint =
             {
@@ -760,19 +756,18 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "vascular-bioculture",
-            category = "organic",
+            categories={"organic"},
             ingredients = {
                 {type="item", name="stem-cells", amount=1},
                 {type="item", name="copper-bacteria", amount=1},
                 {type="item", name="philosophers-hormone", amount=1},
             },
             results = {
-                {type="item", name="vascular-bioculture", amount=4}
+                {type="item", name="vascular-bioculture", amount=4, always_fresh=true}
             },
             auto_recycle = false,
             energy_required = 3,
             allow_productivity = true,
-            result_is_always_fresh = true,
             enabled = false,
             crafting_machine_tint =
             {
@@ -783,7 +778,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "cardiac-bioculture",
-            category = "organic",
+            categories={"organic"},
             ingredients = {
                 {type="item", name="stem-cells", amount=1},
                 {type="item", name="nickel-bacteria", amount=1},
@@ -791,12 +786,11 @@ if mods["space-age"] then
                 {type="item", name="vascular-bioculture", amount=1},
             },
             results = {
-                {type="item", name="cardiac-bioculture", amount=1}
+                {type="item", name="cardiac-bioculture", amount=1, always_fresh=true}
             },
             auto_recycle = false,
             energy_required = 3,
             allow_productivity = true,
-            result_is_always_fresh = true,
             enabled = false,
             crafting_machine_tint =
             {
@@ -811,7 +805,7 @@ if mods["space-age"] then
             {
                 type = "recipe",
                 name = "vestibular-bioculture",
-                category = "organic",
+                categories={"organic"},
                 ingredients = {
                     {type="item", name="stem-cells", amount=1},
                     {type="item", name="zinc-bacteria", amount=1},
@@ -819,12 +813,11 @@ if mods["space-age"] then
                     {type="item", name="vascular-bioculture", amount=1},
                 },
                 results = {
-                    {type="item", name="vestibular-bioculture", amount=1}
+                    {type="item", name="vestibular-bioculture", amount=1, always_fresh=true}
                 },
                 auto_recycle = false,
                 energy_required = 3,
                 allow_productivity = true,
-                result_is_always_fresh = true,
                 enabled = false,
                 crafting_machine_tint =
                 {
@@ -842,7 +835,7 @@ data:extend({
     {
         type = "recipe",
         name = "ambifacient-lunar-waneshaft",
-        category = "crafting",
+        categories={"crafting"},
         ingredients = {
             {type="item", name="steel-plate", amount=1},
             {type="item", name="invar-plate", amount=1},
@@ -860,7 +853,7 @@ data:extend({
     {
         type = "recipe",
         name = "grabber",
-        category = mods["RoboticsFacility"] and "robotics" or "crafting",
+        categories = mods["RoboticsFacility"] and {"robotics"} or {"crafting"},
         ingredients = {
             {type="item", name="motorized-arm", amount=3},
             {type="item", name="electric-engine-unit", amount=1},
@@ -894,17 +887,16 @@ if mods["space-age"] then
                     shift = {8, 8}
                 },
             },
-            category = "cryogenics",
+            categories={"cryogenics"},
             ingredients = {
                 {type="item", name="cardiac-bioculture", amount=1},
                 {type="item", name="ice", amount=1}
             },
             results = {
-                {type="item", name="cardiac-bioculture", amount=1}
+                {type="item", name="cardiac-bioculture", amount=1, always_fresh=true}
             },
             auto_recycle = false,
             energy_required = 3,
-            result_is_always_fresh = true,
             allow_quality = false,
             enabled = false,
             crafting_machine_tint =
@@ -933,15 +925,15 @@ if mods["space-age"] then
                     shift = {8, 8}
                 },
             },
-            category = "organic",
+            categories={"organic"},
             ingredients = {
                 {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1}
             },
             results = {
-                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, probability=0.55},
-                {type="item", name="iron-bacteria", amount=1, probability=0.1},
-                {type="item", name="copper-bacteria", amount=1, probability=0.1},
-                {type="item", name="nickel-bacteria", amount=1, probability=0.05},
+                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, independent_probability=0.55},
+                {type="item", name="iron-bacteria", amount=1, independent_probability=0.1},
+                {type="item", name="copper-bacteria", amount=1, independent_probability=0.1},
+                {type="item", name="nickel-bacteria", amount=1, independent_probability=0.05},
             },
             auto_recycle = false,
             energy_required = 5,
@@ -970,18 +962,17 @@ if mods["space-age"] then
                     shift = {8, 8}
                 },
             },
-            category = "organic",
+            categories={"organic"},
             ingredients = {
                 {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1},
                 {type="item", name="philosophers-hormone", amount=10}
             },
             results = {
-                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, probability=0.25},
+                {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, ignored_by_productivity=0, independent_probability=0.25, always_fresh=true},
                 {type="item", name="spoilage", amount=1}
             },
             auto_recycle = false,
             energy_required = 3,
-            result_is_always_fresh = true,
             allow_productivity = true,
             enabled = false,
             crafting_machine_tint =
@@ -993,11 +984,11 @@ if mods["space-age"] then
     })
     
     if mods["BrassTacksMk2"] then
-        rm.AddProduct("bacterium-extraction-from-sludge", {type="item", name="zinc-bacteria", amount=1, probability=0.05})
+        rm.AddProduct("bacterium-extraction-from-sludge", {type="item", name="zinc-bacteria", amount=1, independent_probability=0.05})
     end
-    rm.AddProduct("musculoskeletal-bioculture", {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, probability=0.05})
-    rm.AddProduct("cardiac-bioculture", {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, probability=0.05})
-    rm.AddProduct("vestibular-bioculture", {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, probability=0.05})
+    rm.AddProduct("musculoskeletal-bioculture", {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, independent_probability=0.05, always_fresh=true})
+    rm.AddProduct("cardiac-bioculture", {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, independent_probability=0.05, always_fresh=true})
+    rm.AddProduct("vestibular-bioculture", {type="item", name="mutagenic-sludge", amount=1, ignored_by_stats=1, independent_probability=0.05, always_fresh=true})
 
 end
 
@@ -1006,7 +997,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "non-reversible-tremie-pipe",
-            category = "advanced-crafting",
+            categories={"advanced-crafting"},
             ingredients = {
                 {type="item", name=mods["bztitanium"] and "self-regulating-valve" or "high-pressure-valve", amount=6},
                 {type="item", name="fluid-regulator", amount=6},
@@ -1029,7 +1020,7 @@ if mods["space-age"] then
             localised_name = {"recipe-name.recycling", {"item-name.non-reversible-tremie-pipe"}},
             icons = {
                     {
-                        icon = "__quality__/graphics/icons/recycling.png",
+                        icon = "__recycler__/graphics/icons/recycling.png",
                         icon_size = 64
                       },
                       {
@@ -1038,11 +1029,11 @@ if mods["space-age"] then
                         scale = 0.33
                       },
                       {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
+                        icon = "__recycler__/graphics/icons/recycling-top.png",
                         icon_size = 64
                       }
             },
-            category = "recycling",
+            categories={"recycling"},
             ingredients = {
                 {type="item", name="non-reversible-tremie-pipe", amount=1}
             },
@@ -1060,7 +1051,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "double-half-rotation",
-            category = mods["LasingAroundMk2"] and "conceptual-inversion" or "organic",
+            categories = mods["LasingAroundMk2"] and {"conceptual-inversion"} or {"organic"},
             icon = "__IfNickelMk2__/graphics/icons/double-half-rotation.png",
             icon_size = 64,
             order = "c[advanced-intermediates]-2a3",
@@ -1090,7 +1081,7 @@ if mods["space-age"] and mods["bztitanium"] then
         {
             type = "recipe",
             name = "nitinol-precursor",
-            category = "crafting",
+            categories={"crafting"},
             ingredients = {
                 {type="item", name="nickel-plate", amount=5},
                 {type="item", name="titanium-plate", amount=1}
@@ -1106,7 +1097,7 @@ if mods["space-age"] and mods["bztitanium"] then
         {
             type = "recipe",
             name = "nitinol-plate",
-            category = "smelting",
+            categories={"smelting"},
             ingredients = {
                 {type="item", name="nitinol-precursor", amount=15}
             },
@@ -1126,7 +1117,7 @@ if mods["space-age"] and mods["bztitanium"] then
         {
             type = "recipe",
             name = "nitinol-plate-in-space",
-            category = "metallurgy",
+            categories={"metallurgy"},
             ingredients = {
                 {type="item", name="nitinol-precursor", amount=10},
                 {type="item", name="metallic-asteroid-chunk", amount=1},
@@ -1149,7 +1140,7 @@ if mods["space-age"] and mods["bztitanium"] then
         {
             type = "recipe",
             name = "self-regulating-valve",
-            category = "advanced-crafting",
+            categories={"advanced-crafting"},
             ingredients = {
                 {type="item", name="high-pressure-valve", amount=1},
                 {type="item", name="nitinol-plate", amount=1},
@@ -1185,7 +1176,7 @@ if mods["space-age"] and mods["castra"] then
                     shift = {-10, 10}
                 }
             },
-            category = "advanced-crafting",
+            categories={"advanced-crafting"},
             ingredients = {
                 {type="item", name="invar-plate", amount=1},
                 {type="item", name=mods["BrassTacksMk2"] and "galvanized-rod" or "iron-stick", amount=4},

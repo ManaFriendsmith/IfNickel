@@ -149,7 +149,7 @@ if mods["ThemTharHillsMk2"] and misc.difficulty > 1 then
 end
 
 if mods["ThemTharHillsMk2"] then
-    rm.AddProduct("trace-metals-from-copper", {type="item", name="nickel-ore", amount=1, probability=0.1})
+    rm.AddProduct("trace-metals-from-copper", {type="item", name="nickel-ore", amount=1, independent_probability=0.1})
 end
 
 --LOGISTICS
@@ -360,7 +360,7 @@ if not data.raw.item["hardened-hull"] then
     rm.ReplaceIngredientProportional("oil-refinery", "steel-plate", "invar-plate", 1, 5)
 end
 
-if mods["quality"] then
+if mods["recycler"] then
     if misc.difficulty > 1 then
         rm.AddIngredient("recycler", "electromagnetic-coil", mods["space-age"] and 50 or 20)
         rm.ReplaceIngredientProportional("recycler", "iron-gear-wheel", "motorized-arm", 0.5, 20)

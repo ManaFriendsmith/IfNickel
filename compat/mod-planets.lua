@@ -189,9 +189,9 @@ end
 if mods["Cerys-Moon-of-Fulgora"] then
     tm.AddUnlock("cerys-nuclear-scrap-recycling", "invar-separation")
     if misc.difficulty > 1 then
-        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="fluid-regulator", amount=1, probability=0.01})
+        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="fluid-regulator", amount=1, independent_probability=0.01})
     else
-        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="high-pressure-valve", amount=1, probability=0.01})
+        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="high-pressure-valve", amount=1, independent_probability=0.01})
     end
 
     if misc.difficulty == 3 then
@@ -200,7 +200,7 @@ if mods["Cerys-Moon-of-Fulgora"] then
 end
 
 if mods["Moshine"] then
-    table.insert(data.raw["resource"]["multi-ore"].minable.results, {type="item", name="nickel-ore", amount=1, probability=0.03})
+    table.insert(data.raw["resource"]["multi-ore"].minable.results, {type="item", name="nickel-ore", amount=1, independent_probability=0.03})
 
     if misc.difficulty == 3 then
         rm.AddIngredient("data-processor", "cooling-fan", 20)

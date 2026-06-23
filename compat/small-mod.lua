@@ -127,3 +127,7 @@ if mods["scrap-industry"] then
 
     ScrapIndustry.items["stem-cells"] = {scrap="jelly", scale=ScrapIndustry.FLAVOR, failrate=0.01}
 end
+
+if mods["pf-beacon-rebalance"] then
+    rm.ReplaceIngredientProportional("external-drive-unit", "pipe", "high-pressure-valve", misc.difficulty == 3 and 0.4 or 0.2)
+end

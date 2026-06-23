@@ -37,9 +37,9 @@ tm.AddUnlock("aop-mineral-synthesis", "ammoniacal-nickel-synthesis")
 
 rm.AddIngredient("aop-lumber-mill", "electric-motor", 20)
 
-rm.AddProduct("aop-nauvitian-crushing", {type="item", name="nickel-ore", amount=1, probability=0.4})
-rm.AddProduct("aop-vulcanusian-crushing", {type="item", name="nickel-ore", amount=2, probability=0.5})
-rm.AddProduct("aop-fulgoran-crushing", {type="item", name="nickel-ore", amount=1, probability=0.2})
-rm.AddProduct("aop-gleban-crushing", {type="item", name="nickel-bacteria", amount=1, probability=0.5})
+rm.AddProduct("aop-nauvitian-crushing", {type="item", name="nickel-ore", amount=1, independent_probability=0.4})
+rm.AddProduct("aop-vulcanusian-crushing", {type="item", name="nickel-ore", amount=2, independent_probability=0.5})
+rm.AddProduct("aop-fulgoran-crushing", {type="item", name="nickel-ore", amount=1, independent_probability=0.2})
+rm.AddProduct("aop-gleban-crushing", {type="item", name="nickel-bacteria", amount=1, independent_probability=0.5})
 
 rm.AddCategory("nickel-bacteria", "biochemistry")

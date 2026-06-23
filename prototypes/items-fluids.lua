@@ -131,10 +131,11 @@ if mods["space-age"] then
             order = "b[new-fluid]-b[vulcanus]-d",
             default_temperature = 1450,
             max_temperature = 2000,
-            base_color = {0, 0, 0.9, 1},
-            flow_color = {0.3, 0.3, 1, 1},
+            base_color = {0.15, 0.15, 0.6, 1},
+            flow_color = {0.2, 0.2, 0.9, 1},
             visualization_color = {0, 0, 1, 1},
-            auto_barrel = false
+            auto_barrel = false,
+            draw_as_glow = true
         },
         {
             type = "item",
@@ -163,7 +164,7 @@ if mods["space-age"] then
     })
 
     --reserve deep blue for nickel.
-    data.raw.fluid["molten-iron"].base_color = {0.4, 0.5, 1}
+    data.raw.fluid["molten-iron"].base_color = {0.4, 0.45, 0.7}
     data.raw.fluid["molten-iron"].flow_color = {0.6, 0.7, 1}
     data.raw.fluid["molten-iron"].visualization_color = {0.6, 0.8, 1}
 end

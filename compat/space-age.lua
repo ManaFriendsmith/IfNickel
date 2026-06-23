@@ -23,6 +23,12 @@ if misc.difficulty > 1 then
 
     rm.AddIngredient("thruster", "gimbaled-rocket-engine", 20)
     rm.AddIngredient("thruster", "fluid-regulator", 5)
+
+    if misc.difficulty == 3 then
+        rm.ReplaceIngredientProportional("landing-pad-unloading-bay", "electric-engine-unit", "grabber")
+    else
+        rm.AddIngredient("landing-pad-unloading-bay", "motorized-arm", 20)
+    end
 else
     rm.AddIngredient("thruster", "high-pressure-valve", 25)
 end
@@ -46,7 +52,7 @@ end
 --data.raw.recipe["molten-copper-from-lava"].hidden_in_factoriopedia = true
 tm.AddUnlock("foundry", "copper-ore-from-malachite", "molten-nickel-from-lava")
 
-tm.AddUnlock("foundry", "molten-nickel", mods["BrassTacksMk2"] and "molten-zinc" or "molten-copper")
+tm.AddUnlock("foundry", "nickel-ore-melting", mods["BrassTacksMk2"] and "zinc-ore-melting" or "iron-ore-melting")
 tm.AddUnlock("foundry", "copper-ore-from-malachite", "-molten-iron")
 tm.AddUnlock("foundry", "casting-nickel", "-casting-steel")
 tm.AddUnlock("foundry", "casting-invar", "-casting-steel")
@@ -138,9 +144,9 @@ if data.raw.item["nitinol-plate"] then
 end
 
 if mods["ThemTharHillsMk2"] then
-    rm.AddProduct("brain-galactification", {type="item", name="mutagenic-sludge", amount=4, probability=0.01})
+    rm.AddProduct("brain-galactification", {type="item", name="mutagenic-sludge", amount=4, independent_probability=0.01, always_fresh=true})
 else
-    rm.AddProduct("brain-galactification", {type="item", name="mutagenic-sludge", amount=1, probability=0.04})
+    rm.AddProduct("brain-galactification", {type="item", name="mutagenic-sludge", amount=1, independent_probability=0.04, always_fresh=true})
 end
 
 --FULGORA
@@ -157,7 +163,7 @@ end
 
 if misc.difficulty > 1 and mods["LasingAroundMk2"] then
     motor_chance = motor_chance - 0.01
-    rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="electric-motor", amount=1, probability=0.2})
+    rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="electric-motor", amount=1, independent_probability=0.2})
 end
 
 --rocket engines exist
@@ -166,7 +172,7 @@ if misc.difficulty == 2 then
 end
 
 if misc.difficulty == 3 then
-    rm.AddProduct("scrap-recycling", {type="item", name="ambifacient-lunar-waneshaft", amount=1, probability=0.02})
+    rm.AddProduct("scrap-recycling", {type="item", name="ambifacient-lunar-waneshaft", amount=1, independent_probability=0.02})
     
     --this plus LDS should be plenty of invar for anything you need invar for without needing to make more from nickel.
 
@@ -180,7 +186,7 @@ if misc.difficulty == 3 then
     end
 end
 
-rm.AddProduct("scrap-recycling", {type="item", name="electric-motor", amount=1, probability=motor_chance})
+rm.AddProduct("scrap-recycling", {type="item", name="electric-motor", amount=1, independent_probability=motor_chance})
 
 if misc.difficulty > 1 then
     rm.AddIngredient("electromagnetic-plant", "electromagnetic-coil", 50)
@@ -223,6 +229,7 @@ if misc.difficulty == 3 then
     end
 
     rm.AddIngredient("cryogenic-plant", "non-reversible-tremie-pipe", 10)
+    rm.AddIngredient("captive-biter-spawner", "non-reversible-tremie-pipe", 10)
 
     if mods["ThemTharHillsMk2"] then
         rm.ReplaceIngredientProportional("hydrocoptic-marzelvane", "pipe", "fluid-regulator", 0.5)
