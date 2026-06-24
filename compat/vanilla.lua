@@ -140,11 +140,11 @@ else
 end
 
 if mods["ThemTharHillsMk2"] and misc.difficulty > 1 then
-    rm.ReplaceIngredientProportional("transceiver", "iron-stick", "electromagnetic-coil")
+    rm.ReplaceIngredientProportional("transceiver", "iron-stick", "electromagnetic-coil", mods["space-age"] and 2 or 1)
     if misc.difficulty == 2 then
-        rm.ReplaceIngredientProportional("stepper-motor", "copper-plate", "electromagnetic-coil", mods["space-age"] and 1 or 2)
+        rm.ReplaceIngredientProportional("stepper-motor", "copper-plate", "electromagnetic-coil", 2)
     else
-        rm.ReplaceIngredientProportional("semiboloid-stator", "copper-plate", "electromagnetic-coil", 2)
+        rm.ReplaceIngredientProportional("semiboloid-stator", "copper-plate", "electromagnetic-coil", mods["space-age"] and 3 or 2)
     end
 end
 
