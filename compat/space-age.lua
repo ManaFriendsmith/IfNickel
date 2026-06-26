@@ -235,6 +235,12 @@ if misc.difficulty == 3 then
         rm.ReplaceIngredientProportional("hydrocoptic-marzelvane", "pipe", "fluid-regulator", 0.5)
     end
 
+    local cooling_2 = table.deepcopy(data.raw.recipe["fluoroketone-cooling"])
+    cooling_2.name = "radiative-fluoroketone-cooling"
+    cooling_2.surface_conditions = {{property="gravity", max=0, min=0}}
+    cooling_2.energy_required = cooling_2.energy_required * 2
+    data:extend({cooling_2})
+    tm.AddUnlock("cryogenic-plant", "radiative-fluoroketone-cooling", "fluoroketone-cooling")
     rm.MultiplyRecipe("fluoroketone-cooling", 50)
     rm.AddIngredient("fluoroketone-cooling", "cooling-fan", 1)
 end
